@@ -1,0 +1,212 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+body {
+  background-color: #eee;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background-color: #fff;
+  height: 64px;
+  line-height: 64px;
+
+  img {
+    width: 160px;
+    height: 24px;
+    margin-left: -100px;
+    cursor: pointer;
+  }
+
+  div {
+    width: auto;
+    height: 64px;
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+
+  .header_new_button {
+    width: 10px;
+    background-color: #f00;
+    color: #fff;
+    border-radius: 5px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+
+  main {
+    align-self: center;
+    width: 70%;
+    margin-top: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #fff;
+    flex: 1 1 80%;
+    display: flex;
+    flex-direction: column;
+
+    .information {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      flex: 1 1 100%;
+
+      a {
+        color: #2c82ff;
+
+        &:hover {
+          color: #0054d2;
+        }
+      }
+
+      @circle_size: 40px;
+
+      .hint {
+        display: flex;
+        // justify-content;
+        align-items: center;
+        justify-content: space-around;
+        height: 80px;
+
+        .step {
+          width: 120px;
+          height: 70px;
+          // background-color: #f00;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .step_circle {
+            width: @circle_size;
+            height: @circle_size; //width=height
+            border: #2c82ff 2px solid;
+            line-height: @circle_size;
+            text-align: center;
+            vertical-align: center;
+            color: #2c82ff;
+            font-weight: bold;
+            border-radius: @circle_size;
+          }
+
+          .step_text {
+            margin-top: 10px;
+            text-align: center;
+            color: #2c82ff;
+            font-size: 17px;
+            font-weight: bold;
+            width: 120px;
+          }
+
+          .step_circle_hidden {
+            border: #cdcdcd 2px solid;
+            color: #cdcdcd;
+          }
+
+          .step_text_hidden {
+            color: #cdcdcd;
+            font-weight: normal;
+          }
+        }
+
+        @line_offset: -123px;
+
+        .step_line {
+          margin-top: -25px;
+          margin-left: @line_offset;
+          margin-right: @line_offset;
+          width: 100px;
+          height: 2px;
+          background-color: #cdcdcd;
+        }
+      }
+
+      .input_text {
+        position: relative;
+
+        div[class="password_icon"] {
+          position: absolute;
+          right: 10px;
+          bottom: 15px;
+        }
+      }
+
+      input[type="text"], input[type="password"] {
+        height: 45px;
+        width: 100%;
+        border: #cdcdcd solid 1px;
+        padding-left: 15px;
+        vertical-align: center;
+        line-height: 45px;
+
+        &:hover {
+          border: #2c82ff solid 1px;
+        }
+
+        &:focus {
+          border: #4790ff solid 1px !important;
+          box-shadow: 0px 0px 5px 0px #4790ff;
+          outline: none;
+        }
+
+        &::-webkit-input-placeholder {
+          font-size: 16px;
+        }
+      }
+
+      .next_step {
+        align-self: center;
+        width: 500px;
+        height: 46px;
+        line-height: 46px;
+        text-align: center;
+        color: #fff;
+        background-color: #2c82ff;
+        border: none;
+        font-size: 17px;
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+
+        &:hover {
+          background-color: #4790ff;
+        }
+
+        &:active {
+          outline: none;
+          background-color: #2c82ff;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  height: 100px;
+  flex: 1 1 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.row {
+  cursor: pointer;
+  padding-bottom: 10px;
+  font-size: 13px;
+  color: #b8b8b8;
+}

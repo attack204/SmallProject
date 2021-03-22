@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#main {
+    width: 500px;
+    height: 300px;
+}
+
+* {
+    overflow: hidden;
+}

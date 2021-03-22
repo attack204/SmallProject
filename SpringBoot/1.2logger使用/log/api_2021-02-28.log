@@ -1,0 +1,64 @@
+2021-2-28 11:21:26 [restartedMain] INFO [LoggerApplication]:55 Starting LoggerApplication using Java 11.0.10 on DESKTOP-77N4P7M with PID 10832 (C:\Users\DELL\Desktop\小案例\SpringBoot\1.2logger使用\target\classes started by DELL in C:\Users\DELL\Desktop\小案例\SpringBoot\1.2logger使用)
+2021-2-28 11:21:26 [restartedMain] INFO [LoggerApplication]:660 No active profile set, falling back to default profiles: default
+2021-2-28 11:21:26 [restartedMain] INFO [DevToolsPropertyDefaultsPostProcessor]:255 Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-2-28 11:21:26 [restartedMain] INFO [DevToolsPropertyDefaultsPostProcessor]:255 For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-2-28 11:21:27 [restartedMain] INFO [TomcatWebServer]:108 Tomcat initialized with port(s): 8080 (http)
+2021-2-28 11:21:27 [restartedMain] INFO [Http11NioProtocol]:173 Initializing ProtocolHandler ["http-nio-8080"]
+2021-2-28 11:21:27 [restartedMain] INFO [StandardService]:173 Starting service [Tomcat]
+2021-2-28 11:21:27 [restartedMain] INFO [StandardEngine]:173 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-2-28 11:21:27 [restartedMain] INFO [[/]]:173 Initializing Spring embedded WebApplicationContext
+2021-2-28 11:21:27 [restartedMain] INFO [ServletWebServerApplicationContext]:289 Root WebApplicationContext: initialization completed in 771 ms
+2021-2-28 11:21:27 [restartedMain] INFO [ThreadPoolTaskExecutor]:181 Initializing ExecutorService 'applicationTaskExecutor'
+2021-2-28 11:21:27 [restartedMain] INFO [OptionalLiveReloadServer]:58 LiveReload server is running on port 35729
+2021-2-28 11:21:27 [restartedMain] INFO [Http11NioProtocol]:173 Starting ProtocolHandler ["http-nio-8080"]
+2021-2-28 11:21:27 [restartedMain] INFO [TomcatWebServer]:220 Tomcat started on port(s): 8080 (http) with context path ''
+2021-2-28 11:21:27 [restartedMain] INFO [LoggerApplication]:61 Started LoggerApplication in 1.439 seconds (JVM running for 3.347)
+2021-2-28 11:21:27 [restartedMain] ERROR [LoggerApplication]:17 This is a test, name: 第一天打卡
+2021-2-28 11:23:54 [restartedMain] INFO [LoggerApplication]:55 Starting LoggerApplication using Java 11.0.10 on DESKTOP-77N4P7M with PID 9628 (C:\Users\DELL\Desktop\小案例\SpringBoot\1.2logger使用\target\classes started by DELL in C:\Users\DELL\Desktop\小案例\SpringBoot\1.2logger使用)
+2021-2-28 11:23:54 [restartedMain] INFO [LoggerApplication]:660 No active profile set, falling back to default profiles: default
+2021-2-28 11:23:54 [restartedMain] INFO [DevToolsPropertyDefaultsPostProcessor]:255 Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-2-28 11:23:54 [restartedMain] INFO [DevToolsPropertyDefaultsPostProcessor]:255 For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-2-28 11:23:55 [restartedMain] INFO [TomcatWebServer]:108 Tomcat initialized with port(s): 8080 (http)
+2021-2-28 11:23:55 [restartedMain] INFO [Http11NioProtocol]:173 Initializing ProtocolHandler ["http-nio-8080"]
+2021-2-28 11:23:55 [restartedMain] INFO [StandardService]:173 Starting service [Tomcat]
+2021-2-28 11:23:55 [restartedMain] INFO [StandardEngine]:173 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-2-28 11:23:55 [restartedMain] INFO [[/]]:173 Initializing Spring embedded WebApplicationContext
+2021-2-28 11:23:55 [restartedMain] INFO [ServletWebServerApplicationContext]:289 Root WebApplicationContext: initialization completed in 712 ms
+2021-2-28 11:23:55 [restartedMain] INFO [ThreadPoolTaskExecutor]:181 Initializing ExecutorService 'applicationTaskExecutor'
+2021-2-28 11:23:55 [restartedMain] INFO [OptionalLiveReloadServer]:58 LiveReload server is running on port 35729
+2021-2-28 11:23:55 [restartedMain] INFO [Http11NioProtocol]:173 Starting ProtocolHandler ["http-nio-8080"]
+2021-2-28 11:23:56 [restartedMain] INFO [TomcatWebServer]:220 Tomcat started on port(s): 8080 (http) with context path ''
+2021-2-28 11:23:56 [restartedMain] INFO [LoggerApplication]:61 Started LoggerApplication in 1.455 seconds (JVM running for 2.663)
+2021-2-28 11:23:56 [restartedMain] ERROR [LoggerApplication]:17 This is a test, name: 第一天打卡
+2021-2-28 11:24:47 [restartedMain] INFO [LoggerApplication]:55 Starting LoggerApplication using Java 11.0.10 on DESKTOP-77N4P7M with PID 20176 (C:\Users\DELL\Desktop\小案例\SpringBoot\1.2logger使用\target\classes started by DELL in C:\Users\DELL\Desktop\小案例\SpringBoot\1.2logger使用)
+2021-2-28 11:24:47 [restartedMain] INFO [LoggerApplication]:660 No active profile set, falling back to default profiles: default
+2021-2-28 11:24:47 [restartedMain] INFO [DevToolsPropertyDefaultsPostProcessor]:255 Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-2-28 11:24:47 [restartedMain] INFO [DevToolsPropertyDefaultsPostProcessor]:255 For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-2-28 11:24:48 [restartedMain] INFO [TomcatWebServer]:108 Tomcat initialized with port(s): 8080 (http)
+2021-2-28 11:24:48 [restartedMain] INFO [Http11NioProtocol]:173 Initializing ProtocolHandler ["http-nio-8080"]
+2021-2-28 11:24:48 [restartedMain] INFO [StandardService]:173 Starting service [Tomcat]
+2021-2-28 11:24:48 [restartedMain] INFO [StandardEngine]:173 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-2-28 11:24:48 [restartedMain] INFO [[/]]:173 Initializing Spring embedded WebApplicationContext
+2021-2-28 11:24:48 [restartedMain] INFO [ServletWebServerApplicationContext]:289 Root WebApplicationContext: initialization completed in 684 ms
+2021-2-28 11:24:48 [restartedMain] INFO [ThreadPoolTaskExecutor]:181 Initializing ExecutorService 'applicationTaskExecutor'
+2021-2-28 11:24:48 [restartedMain] INFO [OptionalLiveReloadServer]:58 LiveReload server is running on port 35729
+2021-2-28 11:24:48 [restartedMain] INFO [Http11NioProtocol]:173 Starting ProtocolHandler ["http-nio-8080"]
+2021-2-28 11:24:48 [restartedMain] INFO [TomcatWebServer]:220 Tomcat started on port(s): 8080 (http) with context path ''
+2021-2-28 11:24:48 [restartedMain] INFO [LoggerApplication]:61 Started LoggerApplication in 1.264 seconds (JVM running for 2.387)
+2021-2-28 11:24:48 [restartedMain] ERROR [LoggerApplication]:17 This is a test, name: 第一天打卡
+2021-2-28 11:26:48 [restartedMain] INFO [LoggerApplication]:55 Starting LoggerApplication using Java 11.0.10 on DESKTOP-77N4P7M with PID 7128 (C:\Users\DELL\Desktop\小案例\SpringBoot\1.2logger使用\target\classes started by DELL in C:\Users\DELL\Desktop\小案例\SpringBoot\1.2logger使用)
+2021-2-28 11:26:48 [restartedMain] INFO [LoggerApplication]:660 No active profile set, falling back to default profiles: default
+2021-2-28 11:26:48 [restartedMain] INFO [DevToolsPropertyDefaultsPostProcessor]:255 Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-2-28 11:26:48 [restartedMain] INFO [DevToolsPropertyDefaultsPostProcessor]:255 For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-2-28 11:26:49 [restartedMain] INFO [TomcatWebServer]:108 Tomcat initialized with port(s): 8080 (http)
+2021-2-28 11:26:49 [restartedMain] INFO [Http11NioProtocol]:173 Initializing ProtocolHandler ["http-nio-8080"]
+2021-2-28 11:26:49 [restartedMain] INFO [StandardService]:173 Starting service [Tomcat]
+2021-2-28 11:26:49 [restartedMain] INFO [StandardEngine]:173 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-2-28 11:26:49 [restartedMain] INFO [[/]]:173 Initializing Spring embedded WebApplicationContext
+2021-2-28 11:26:49 [restartedMain] INFO [ServletWebServerApplicationContext]:289 Root WebApplicationContext: initialization completed in 691 ms
+2021-2-28 11:26:49 [restartedMain] INFO [ThreadPoolTaskExecutor]:181 Initializing ExecutorService 'applicationTaskExecutor'
+2021-2-28 11:26:49 [restartedMain] INFO [OptionalLiveReloadServer]:58 LiveReload server is running on port 35729
+2021-2-28 11:26:49 [restartedMain] INFO [Http11NioProtocol]:173 Starting ProtocolHandler ["http-nio-8080"]
+2021-2-28 11:26:49 [restartedMain] INFO [TomcatWebServer]:220 Tomcat started on port(s): 8080 (http) with context path ''
+2021-2-28 11:26:49 [restartedMain] INFO [LoggerApplication]:61 Started LoggerApplication in 1.251 seconds (JVM running for 2.393)
+2021-2-28 11:26:49 [restartedMain] ERROR [LoggerApplication]:17 This is a test, name: 第一天打卡

@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    width: 500px;
+    height: 500px;
+    background-color: #eee;
+}
+
+.form tr {
+    width: 500px;
+    height: 100px;
+}
+
+.form tr td {
+    width: 250px;
+    height: 100px;
+    border: 1px #FFF solid;
+}
+
+.form tr:hover {
+    background-color: #ddd !important;
+}
+
+.form tbody > tr:nth-of-type(odd) {
+    background-color: #FFF;
+}

@@ -1,0 +1,1 @@
+print(len("https://pic.mdcdn.cn/h5/pic/kaoker/image/202010/5f9033ff77141.jpg/"));

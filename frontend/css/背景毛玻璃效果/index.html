@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            max-height: 100vh;
+            background: url('http://cdn.attack204.com/waves-1867285_1920.jpg')
+        }
+
+        #app {
+            width: 500px;
+            height: 500px;
+            background-color: rgba(20, 20, 201, 0.25);
+            backdrop-filter: blur(50px);
+            /*必须配合rgba使用*/
+
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-content: space-around;
+            /* align-items: center; */
+        }
+
+        .item {
+            width: 80px;
+            height: 80px;
+            background-color: #89f;
+        }
+
+    </style>
+</head>
+
+<body>
+<div id="app">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #eee;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fff;
+    height: 64px;
+    line-height: 64px;
+}
+
+header img {
+    width: 160px;
+    height: 24px;
+    margin-left: -100px;
+    cursor: pointer;
+}
+
+header div {
+    width: auto;
+    height: 64px;
+}
+
+header div a {
+    text-decoration: none;
+    color: #000;
+}
+
+header .header_new_button {
+    width: 10px;
+    background-color: #f00;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+}
+
+.container main {
+    align-self: center;
+    width: 70%;
+    margin-top: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #fff;
+    flex: 1 1 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container main .information {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1 1 100%;
+}
+
+.container main .information a {
+    color: #2c82ff;
+}
+
+.container main .information a:hover {
+    color: #0054d2;
+}
+
+.container main .information .hint {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 80px;
+}
+
+.container main .information .hint .step {
+    width: 120px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container main .information .hint .step .step_circle {
+    width: 40px;
+    height: 40px;
+    border: #2c82ff 2px solid;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: center;
+    color: #2c82ff;
+    font-weight: bold;
+    border-radius: 40px;
+}
+
+.container main .information .hint .step .step_text {
+    margin-top: 10px;
+    text-align: center;
+    color: #2c82ff;
+    font-size: 17px;
+    font-weight: bold;
+    width: 120px;
+}
+
+.container main .information .hint .step .step_circle_hidden {
+    border: #cdcdcd 2px solid;
+    color: #cdcdcd;
+}
+
+.container main .information .hint .step .step_text_hidden {
+    color: #cdcdcd;
+    font-weight: normal;
+}
+
+.container main .information .hint .step_line {
+    margin-top: -25px;
+    margin-left: -123px;
+    margin-right: -123px;
+    width: 100px;
+    height: 2px;
+    background-color: #cdcdcd;
+}
+
+.container main .information .input_text {
+    position: relative;
+}
+
+.container main .information .input_text div[class="password_icon"] {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+}
+
+.container main .information input[type="text"],
+.container main .information input[type="password"] {
+    height: 45px;
+    width: 100%;
+    border: #cdcdcd solid 1px;
+    padding-left: 15px;
+    vertical-align: center;
+    line-height: 45px;
+}
+
+.container main .information input[type="text"]:hover,
+.container main .information input[type="password"]:hover {
+    border: #2c82ff solid 1px;
+}
+
+.container main .information input[type="text"]:focus,
+.container main .information input[type="password"]:focus {
+    border: #4790ff solid 1px !important;
+    box-shadow: 0px 0px 5px 0px #4790ff;
+    outline: none;
+}
+
+.container main .information input[type="text"]::-webkit-input-placeholder,
+.container main .information input[type="password"]::-webkit-input-placeholder {
+    font-size: 16px;
+}
+
+.container main .information .next_step {
+    align-self: center;
+    width: 500px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    color: #fff;
+    background-color: #2c82ff;
+    border: none;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+}
+
+.container main .information .next_step:hover {
+    background-color: #4790ff;
+}
+
+.container main .information .next_step:active {
+    outline: none;
+    background-color: #2c82ff;
+}
+
+footer {
+    height: 100px;
+    flex: 1 1 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.row {
+    cursor: pointer;
+    padding-bottom: 10px;
+    font-size: 13px;
+    color: #b8b8b8;
+}

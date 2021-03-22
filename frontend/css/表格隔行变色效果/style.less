@@ -1,0 +1,44 @@
+@RowWidth: 500px;
+@ColumnNum: 2;
+@RowNum: 5;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  width: @RowWidth;
+  height: 500px;
+  background-color: #eee;
+
+  tr {
+    width: @RowWidth;
+    height: 100px;
+
+    td {
+      width: @RowWidth / @ColumnNum;
+      height: 100px;
+      border: 1px #FFF solid;
+    }
+
+    &:hover {
+      background-color: #ddd !important;
+      //这里要加一个!important  
+    }
+  }
+
+  tbody > tr:nth-of-type(odd) {
+    background-color: #FFF;
+  }
+
+  // table {
+  //   tbody {
+  //     tr:nth-of-type(odd) {
+  //       background-color: #FFF;
+  //     }
+  //   }
+  // }
+
+}

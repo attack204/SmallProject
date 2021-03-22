@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>威软网易登陆</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+
+<body>
+<header>
+    <img src="./img/headerimg.png">
+    <div>
+        <a href="#">靓号注册</a>
+        <a href="#" class="header_new_button">new</a>
+    </div>
+</header>
+<div class="container">
+    <!--把main和footer放到一个container里面是为了用flex布局将footer固定到下方-->
+    <main>
+        <div class="information">
+            <div class="hint">
+                <div class="step">
+                    <div class="step_circle">1</div>
+                    <div class="step_text">填写帐号密码</div>
+                </div>
+                <div class="step_line">
+
+                </div>
+                <div class="step">
+                    <div class="step_circle step_circle_hidden">2</div>
+                    <div class="step_text step_text_hidden">验证手机号</div>
+                </div>
+                <div class="step_line">
+
+                </div>
+                <div class="step">
+                    <div class="step_circle step_circle_hidden">3</div>
+                    <div class="step_text step_text_hidden">完成注册</div>
+                </div>
+            </div>
+            <div class="input_text">
+                <input placeholder="请输入邮箱地址" type="text" name="" id="">
+            </div>
+            <div class="input_text">
+                <input placeholder="请输入8-16位密码" type="password" name="" id="">
+                <div class="password_icon"><i class="fa fa-eye-slash"></i></div>
+            </div>
+            <div>
+                <div>
+                    <input type="checkbox" class="check_box">
+                    用户勾选即代表同意<a href="#">《网易邮箱服务条款》</a>和<a href="#">《网易隐私政策》</a>
+                </div>
+                <button style="margin-top: 20px;" class="next_step">
+                    下一步
+                </button>
+                <div style="margin-top: 20px;">已有帐号？<a href="#">去登录</a></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="row">公司简介 | 网易帐号中心 | 帐号中心公众号 | 网易帐号管家 | 网易靓号 | 网易帮助中心</div>
+        <div class="row">增值电信业务经营许可证粤B2-20090191 工业和信息化部ICP/IP地址/域名信息备案管理系统</div>
+        <div class="row">网易公司版权所有 © 1997-2021</div>
+    </footer>
+</div>
+</body>
+<script src="./js/main.js"></script>
+</html>

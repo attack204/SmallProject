@@ -1,0 +1,283 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  height: 200vh;
+}
+
+.container {
+  @img_list_width: 1200px;
+  @img_list_height: 400px;
+  @img_list_item_width: 400px;
+  height: @img_list_height;
+  width: 100%;
+  background-color: rgb(54, 58, 62);
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    .left_arrow {
+      opacity: 1;
+    }
+
+    .right_arrow {
+      opacity: 1;
+    }
+  }
+
+  .img_list {
+    width: @img_list_width;
+    max-width: @img_list_width;
+    overflow: hidden;
+    height: inherit;
+    background-color: #fff;
+    position: relative;
+
+    .img_list_container {
+      width: 3200px;
+      height: inherit;
+      display: flex;
+      position: absolute;
+      left: -1600px;
+      transition: all 0.5s;
+
+      .img_item {
+        width: @img_list_item_width;
+        height: 400px;
+        background-color: #0f0;
+        position: relative;
+
+        .img_item_cell {
+          width: inherit;
+          height: inherit;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        .img_item_mask {
+          width: @img_list_item_width;
+          height: 400px;
+          background-color: transparent;
+          position: absolute;
+          transition: all 0.4s;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
+
+          img {
+            display: block;
+            transition: all 0.4s;
+            padding-top: 70px;
+          }
+
+          .img_item_line {
+            transition: all 0.4s;
+            height: 3px;
+            width: 50px;
+            background-color: #fff;
+          }
+
+          .img_item_title {
+            font-size: 1.5em;
+            color: #fff;
+            // padding-bottom: 70px;
+            //设置了dispaly属性后，对于其中的元素，仍然可以用padding来调整位置
+          }
+
+          .img_item_introduction {
+            opacity: 0;
+            width: (@img_list_item_width) - 60px;
+            text-align: center;
+            color: #fff;
+            align-self: right;
+            padding-left: 30px;
+            padding-right: 30px;
+          }
+
+          @button_height: 40px;
+
+          .img_item_button_container {
+            transition: all 0.4s;
+            height: @button_height;
+            opacity: 0;
+
+            .img_item_button {
+              outline: none;
+              transition: all 0.4s;
+              background-color: transparent;
+              height: @button_height;
+              width: 100px;
+              border: 1px #fff solid;
+              color: #fff;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .img_item_mask:hover {
+          background-color: rgba(65, 105, 225, 0.6);
+
+          img {
+            padding-top: 50px;
+          }
+
+          .img_item_line {
+            height: 0px;
+          }
+
+          .img_item_introduction {
+            opacity: 1;
+            // margin-bottom: -50px;
+          }
+
+          .img_item_button_container {
+            opacity: 1;
+
+            .img_item_button:hover {
+              color: blue;
+              background-color: #fff;
+            }
+
+            padding-bottom: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  .left_arrow {
+    height: @img_list_height;
+    width: 50px;
+    position: relative;
+    left: 50px;
+    z-index: 1;
+    opacity: 0;
+    background: url("./img/left.png") no-repeat center center;
+  }
+
+  @cd_card_width: 50px;
+
+  .left_arrow::after {
+    content: "";
+    position: absolute;
+    height: @img_list_height;
+    width: @cd_card_width;
+    left: 0px;
+    z-index: 1;
+    opacity: 0.4;
+    background-color: #787878;
+  }
+
+  .right_arrow {
+    height: @img_list_height;
+    width: @cd_card_width;
+    background-color: #f00;
+    position: relative;
+    right: @cd_card_width;
+    z-index: 1;
+    opacity: 0;
+    background: url("./img/right.png") no-repeat center center;
+  }
+
+  .right_arrow::after {
+    content: "";
+    position: absolute;
+    height: @img_list_height;
+    width: @cd_card_width;
+    left: 0px;
+    z-index: 1;
+    opacity: 0.4;
+    background-color: #787878;
+  }
+}
+
+.nav {
+  @nav_height: 100px;
+  height: @nav_height;
+  width: 100%;
+  background-color: rgb(40, 44, 47);
+  display: flex;
+
+  .why_choose_us {
+    height: @nav_height;
+    line-height: @nav_height;
+    width: 50%;
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+  }
+
+  @nav_item_width: 10%;
+
+  .nav_underline_container {
+    width: @nav_item_width;
+    position: relative;
+    left: 10%;
+    height: 5px;
+    top: 95px;
+    transition: left 0.5s;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+
+    .nav_underline {
+      height: inherit;
+      width: 70%;
+      background-color: rgba(65, 105, 225, 0.6);
+    }
+  }
+
+  .nav_item {
+    width: @nav_item_width;
+    height: @nav_height;
+    line-height: @nav_height;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      color: rgba(65, 105, 225, 0.6);
+    }
+  }
+}
+
+@nav_list_height: 430px;
+.nav_list {
+  width: 100%;
+  height: @nav_list_height;
+  position: relative;
+  overflow: hidden;
+  background-color: #eee;
+
+  .nav_list_item {
+    width: 100%;
+    height: @nav_list_height;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    transition: all 0.5s;
+
+    .nav_list_item_container {
+      width: inherit;
+      height: inherit;
+      padding: 30px 100px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-around;
+
+      .nav_list_item_img {
+        width: 40%;
+        height: 80%;
+      }
+
+      .nav_list_item_text {
+        width: 50%;
+        height: @nav_list_height;
+      }
+    }
+  }
+}
