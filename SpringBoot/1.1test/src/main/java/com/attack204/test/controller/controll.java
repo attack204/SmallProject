@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 public class controll {
     @Autowired
-    userServiceImpl userServiceImpl;
+    userService userService;
 
     @GetMapping("/query")
     public String ret(ServletRequest request) {

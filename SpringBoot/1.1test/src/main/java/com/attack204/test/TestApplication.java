@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -17,9 +18,7 @@ import java.util.List;
 @SpringBootApplication(scanBasePackages = "com.attack204.test")
 public class TestApplication {
     public static void main(String[] args) {
-        ConfigurableApplicationContext run = SpringApplication.run(TestApplication.class, args);
-        PersonImpl<String> person = new PersonImpl<>();
-        System.out.println(person.show("attack204"));
+        SpringApplication.run(TestApplication.class, args);
     }
 
 }
