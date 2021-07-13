@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".BottomNavigation">
+    <item
+        android:id="@+id/page_sound_wave"
+        android:enabled="true"
+        android:icon="@drawable/icon_sound_wave"
+        android:title="@string/bottom_navigation_sound_wave"/>
+    <item
+        android:id="@+id/page_friend"
+        android:icon="@drawable/icon_friend"
+        android:title="@string/bottom_navigation_friend"/>
+    <item
+        android:id="@+id/page_user"
+        android:icon="@drawable/icon_user"
+        android:title="@string/bottom_navigation_user"/>
+</menu>

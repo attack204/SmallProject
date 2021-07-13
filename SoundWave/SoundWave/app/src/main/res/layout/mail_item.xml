@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="data"
+            type="com.example.soundwave.datas.MailData"/>
+    </data>
+
+    <TextView
+        android:id="@+id/mail_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="50dp"
+        android:layout_margin="5dp"
+        android:background="@color/purple_500"
+        android:textColor="@color/white"
+        android:text="@{data.id}" />
+
+</layout>

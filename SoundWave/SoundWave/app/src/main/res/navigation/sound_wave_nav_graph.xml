@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sound_wave_nav_graph"
+    app:startDestination="@id/soundWaveHostFragment">
+
+    <fragment
+        android:id="@+id/soundWaveHostFragment"
+        android:name="com.example.soundwave.fragments.SoundWaveHostFragment"
+        android:label="fragment_sound_wave_host"
+        tools:layout="@layout/fragment_sound_wave_host" />
+    <fragment
+        android:id="@+id/mailFragment"
+        android:name="com.example.soundwave.fragments.MailFragment"
+        android:label="fragment_mail"
+        tools:layout="@layout/fragment_mail" >
+        <action
+            android:id="@+id/action_mailFragment_to_mailDetailFragment"
+            app:destination="@id/mailDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/soundWaveFragment"
+        android:name="com.example.soundwave.fragments.SoundWaveFragment"
+        android:label="fragment_sound_wave"
+        tools:layout="@layout/fragment_sound_wave" >
+        <action
+            android:id="@+id/action_soundWaveFragment_to_trackFragment"
+            app:destination="@id/trackFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/soundWaveMessageFragment"
+        android:name="com.example.soundwave.fragments.SoundWaveMessageFragment"
+        android:label="fragment_sound_wave_message"
+        tools:layout="@layout/fragment_sound_wave_message" >
+        <action
+            android:id="@+id/action_soundWaveMessageFragment_to_soundWaveChatFragment"
+            app:destination="@id/soundWaveChatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mailDetailFragment"
+        android:name="com.example.soundwave.fragments.MailDetailFragment"
+        android:label="fragment_mail_detail"
+        tools:layout="@layout/fragment_mail_detail">
+        <argument
+            android:name="mailId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/soundWaveChatFragment"
+        android:name="com.example.soundwave.fragments.SoundWaveChatFragment"
+        android:label="fragment_sound_wave_chat"
+        tools:layout="@layout/fragment_sound_wave_chat" >
+        <action
+            android:id="@+id/action_soundWaveChatFragment_to_soundWaveChatDetailFragment"
+            app:destination="@id/soundWaveChatDetailFragment" />
+        <argument
+            android:name="trackId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/trackFragment"
+        android:name="com.example.soundwave.fragments.TrackFragment"
+        android:label="fragment_track"
+        tools:layout="@layout/fragment_track" >
+        <action
+            android:id="@+id/action_trackFragment_to_soundWaveChatFragment"
+            app:destination="@id/soundWaveChatFragment" />
+        <argument
+            android:name="soundWaveId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/soundWaveChatDetailFragment"
+        android:name="com.example.soundwave.fragments.SoundWaveChatDetailFragment"
+        android:label="fragment_sound_wave_chat_detail"
+        tools:layout="@layout/fragment_sound_wave_chat_detail" />
+</navigation>
