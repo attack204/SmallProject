@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FanShe/FanShe.iml" filepath="$PROJECT_DIR$/FanShe/FanShe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FileTest/FileTest.iml" filepath="$PROJECT_DIR$/FileTest/FileTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java.iml" filepath="$PROJECT_DIR$/.idea/Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWork/JavaWork.iml" filepath="$PROJECT_DIR$/JavaWork/JavaWork.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_container/Java_container.iml" filepath="$PROJECT_DIR$/Java_container/Java_container.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MultiThread/MultiThread.iml" filepath="$PROJECT_DIR$/MultiThread/MultiThread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StringTest/StringTest.iml" filepath="$PROJECT_DIR$/StringTest/StringTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/abstractClassTest/abstractClassTest.iml" filepath="$PROJECT_DIR$/abstractClassTest/abstractClassTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/socket/socket.iml" filepath="$PROJECT_DIR$/socket/socket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/staticTest/staticTest.iml" filepath="$PROJECT_DIR$/staticTest/staticTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/abstractClassTest/test.iml" filepath="$PROJECT_DIR$/abstractClassTest/test.iml" />
+    </modules>
+  </component>
+</project>
