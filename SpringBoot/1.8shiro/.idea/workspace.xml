@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afe039ac-2437-419d-bf2b-692a8d86422f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../1test/src/main/java/com/attack204/test/TestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../1test/src/main/java/com/attack204/test/TestApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../1test/src/main/java/com/attack204/test/controller/controll.java" beforeDir="false" afterPath="$PROJECT_DIR$/../1test/src/main/java/com/attack204/test/controller/controll.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../1test/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../1test/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../1test/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../1test/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../1test/target/classes/com/attack204/test/TestApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../1test/target/classes/com/attack204/test/TestApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../1test/target/classes/com/attack204/test/controller/controll.class" beforeDir="false" afterPath="$PROJECT_DIR$/../1test/target/classes/com/attack204/test/controller/controll.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SpringBootSecurity/src/main/java/com/example/controller/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SpringBootSecurity/src/main/java/com/example/controller/UserInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,19 +86,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="MyBatis" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.shiro.app.AppApplication" />
@@ -139,6 +123,7 @@
       <workItem from="1613125233240" duration="7656000" />
       <workItem from="1613139355386" duration="434000" />
       <workItem from="1613641324508" duration="704000" />
+      <workItem from="1626940378123" duration="178000" />
     </task>
     <servers />
   </component>
