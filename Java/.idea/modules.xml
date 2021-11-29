@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/MultiThread/MultiThread.iml" filepath="$PROJECT_DIR$/MultiThread/MultiThread.iml" />
       <module fileurl="file://$PROJECT_DIR$/StringTest/StringTest.iml" filepath="$PROJECT_DIR$/StringTest/StringTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/abstractClassTest/abstractClassTest.iml" filepath="$PROJECT_DIR$/abstractClassTest/abstractClassTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finalTest/finalTest.iml" filepath="$PROJECT_DIR$/finalTest/finalTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/socket/socket.iml" filepath="$PROJECT_DIR$/socket/socket.iml" />
       <module fileurl="file://$PROJECT_DIR$/staticTest/staticTest.iml" filepath="$PROJECT_DIR$/staticTest/staticTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/abstractClassTest/test.iml" filepath="$PROJECT_DIR$/abstractClassTest/test.iml" />
