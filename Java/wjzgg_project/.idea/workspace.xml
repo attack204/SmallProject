@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cb67c128-91dd-44ce-b3e2-4ffd44408693" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/wjzgg_project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/DS.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/production/DS/LibrarySystem/Book$Node.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/production/DS/LibrarySystem/Book.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/production/DS/LibrarySystem/Books1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/production/DS/LibrarySystem/books.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/production/DS/LibrarySystem/giveBookIn.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/production/DS/LibrarySystem/manager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/production/DS/LibrarySystem/managerAccount.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/production/DS/LibrarySystem/managerLogin.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/production/DS/LibrarySystem/readBook.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/production/DS/LibrarySystem/returnBookIn.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/production/DS/LibrarySystem/searchBook.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/production/DS/LibrarySystem/searchBookIn$ButtonListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/production/DS/LibrarySystem/searchBookIn.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/production/DS/LibrarySystem/student.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/production/DS/LibrarySystem/studentLogin.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/production/DS/LibrarySystem/userAccount.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/production/DS/LibrarySystem/userInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/production/DS/module-info.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/src/LibrarySystem/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/src/LibrarySystem/Books1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/src/LibrarySystem/manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/src/LibrarySystem/managerLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/src/LibrarySystem/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/src/LibrarySystem/student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/src/LibrarySystem/studentLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/src/LibrarySystem/userInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/src/module-info.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/DS/src/module-info.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\maven\apache-maven-3.6.3\repository" />
+        <option name="mavenHome" value="D:\maven\apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\maven\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="21wprRivoHtuq0uQuCE2mfVL4m5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="15" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DS/src" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\SmallProject\SmallProject\Java\wjzgg_project\DS\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="userInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LibrarySystem.userInterface" />
+      <module name="DS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="LibrarySystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.userInterface" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cb67c128-91dd-44ce-b3e2-4ffd44408693" name="Default Changelist" comment="" />
+      <created>1638862204569</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638862204569</updated>
+      <workItem from="1638862206773" duration="505000" />
+      <workItem from="1638862726077" duration="1773000" />
+      <workItem from="1639033984788" duration="1166000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/DS/src/LibrarySystem/student.java</url>
+          <line>292</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
