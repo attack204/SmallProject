@@ -1,0 +1,17 @@
+# ninja log v5
+0	38	1647085181299926416	CMakeFiles/SmallProject.dir/C++/SmartPointer/smart_pointer.cpp.o	6b3dfd0ad42133ff
+38	75	1647085181337379827	SmallProject	ac4c59c454a9c09c
+0	313	1647085425300608509	CMakeFiles/SmallProject.dir/C++/SmartPointer/smart_pointer.cpp.o	6b3dfd0ad42133ff
+314	357	1647085425345110047	SmallProject	ac4c59c454a9c09c
+1	272	1647085431254474098	CMakeFiles/SmallProject.dir/C++/SmartPointer/smart_pointer.cpp.o	6b3dfd0ad42133ff
+273	306	1647085431289256162	SmallProject	ac4c59c454a9c09c
+1	274	1647085472991347189	CMakeFiles/SmallProject.dir/C++/SmartPointer/smart_pointer.cpp.o	6b3dfd0ad42133ff
+274	308	1647085473027269501	SmallProject	ac4c59c454a9c09c
+1	390	1647085478509667075	CMakeFiles/SmallProject.dir/C++/SmartPointer/smart_pointer.cpp.o	6b3dfd0ad42133ff
+391	422	1647085478542396537	SmallProject	ac4c59c454a9c09c
+0	263	1647085483964657985	CMakeFiles/SmallProject.dir/C++/SmartPointer/smart_pointer.cpp.o	6b3dfd0ad42133ff
+263	293	1647085483995370353	SmallProject	ac4c59c454a9c09c
+0	251	1647091380155613569	CMakeFiles/SmallProject.dir/C++/SmartPointer/smart_pointer.cpp.o	6b3dfd0ad42133ff
+251	292	1647091380197112335	SmallProject	ac4c59c454a9c09c
+1	402	1647178263749241411	CMakeFiles/SmallProject.dir/C++/SmartPointer/smart_pointer.cpp.o	6b3dfd0ad42133ff
+402	479	1647178263828185545	SmallProject	ac4c59c454a9c09c
