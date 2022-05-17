@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <style>
+      @font-face {
+        font-family: eng_font;
+        src: url("eng_font.ttf");
+      }
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: 微软雅黑;
+      }
+
+      /* 头部样式开始 */
+      .header {
+        height: 350px;
+        width: 1457px;
+        background-image: url("bg.jpg");
+        background-size: 100% 100%;
+      }
+      
+
+      .head_avatar_img {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        margin-left: -90px;
+        border-radius: 90px;
+        border: 2px #fff solid;
+        transition: transform 0.5s, border 0.1s;
+      }
+      .head_avatar_img:hover {
+        transform: scale(1.05, 1.05);
+        border: 2px #00f solid;
+        box-shadow: 0px 0px 1px 1px #00f;
+        transform: rotate(360deg);
+      }
+      .head_sentence {
+        position: relative;
+        top: 250px;
+        margin-left: -110px;
+        left: 50%;
+        font-family: "eng_font";
+      }
+
+      /* 推荐部分样式开始 */
+      .head_main {
+        width: 800px;
+        height: 180px;
+        background-color: #fff;
+        margin-top: 20px !important;
+        margin: 0 auto;
+        box-shadow: 0px 0px 10px 5px #a9a9a9;
+      }
+
+      .row:first-child .support_post {
+        margin-top: 20px;
+      }
+
+      .support_post {
+        width: 150px;
+        height: 150px;
+        background-color: #f5f5f5;
+        float: left;
+        margin-left: 100px;
+        margin-top: 50px;
+      }
+
+      /*主体容器部分*/
+      .main {
+        margin-top: 20px;
+      }
+
+      /* 文章部分样式开始 */
+      .post_container {
+        width: 830px;
+        box-shadow: 0px 0px 10px 5px #a9a9a9;
+        float: left;
+        height: 1000px;
+        margin-left: 180px;
+      }
+
+      .post {
+        border: 1px #f00 solid;
+        margin: 10px;
+      }
+      .post_summary {
+        background-color: #a9a9a9;
+        margin: 10px;
+      }
+
+      /*右侧小工具样式开始*/
+      .tool-list {
+        width: 300px;
+        box-shadow: 0px 0px 10px 5px #a9a9a9;
+        float: left;
+        height: 1000px;
+        margin-left: 30px;
+      }
+
+      /*右侧返回顶部样式*/
+      .back_to_top {
+        width: 32px;
+        height: 62px;
+        background-image: url("rocket.png");
+        position: absolute;
+        position: fixed;
+        left: 1400px;
+        top: 650px;
+      }
+      .clear {
+        clear: both;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $(".head_avatar_img").click(function () {
+          // alert(1);
+          // $(".head_avatar_img").animate({"border":"5px #000 solid"});
+          $("p").animate({ "background-color": "yellow" });
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- 页面的头部 -->
+    <img class="head_avatar_img" src="avatar.png" />
+    <div class="header">
+      <h1 class="head_sentence" style="font-family: 宋体; margin-bottom: 10px;">自为风月马前卒</h1> 
+      <h1 class="head_sentence">Learn and live</h1>
+    </div>
+    <!--页面的主体部分，样式可能还会修改  -->
+    <!-- 暂定文章部分由两块组成，第一块是卡片样式，第二块是横排样式 -->
+    <div class="head_main">
+      <div class="row">
+        <div class="support_post">
+          <h1>Head</h1>
+          <p>Hello World</p>
+          <p>please belive that</p>
+          <p>The beauty will come soon</p>
+        </div>
+        <div class="support_post">
+          <h1>Head</h1>
+          <p>Hello World</p>
+          <p>please belive that</p>
+          <p>The beauty will come soon</p>
+        </div>
+        <div class="support_post">
+          <h1>Head</h1>
+          <p>Hello World</p>
+          <p>please belive that</p>
+          <p>The beauty will come soon</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <!--接下来是文章部分，大致分为左右两侧，左边放文章，右侧放各种部件-->
+    <div class="main">
+      <!-- <div style="margin-left: -400px;"> 设置这个div的目的是为了营造一个偏移效果 -->
+      <div class="post_container">
+        <div class="post">
+          <div class="post_title">
+            <h1>Hello World</h1>
+          </div>
+          <div class="post_summary">
+            <p>summary: This is a passage of my blog</p>
+            <p>click here to read more</p>
+          </div>
+          <div class="post_information">
+            <p>Time: 2020.9.14</p>
+          </div>
+        </div>
+        <div class="post">
+          <div class="post_title">
+            <h1>Hello World</h1>
+          </div>
+          <div class="post_summary">
+            <p>summary: This is a passage of my blog</p>
+            <p>click here to read more</p>
+          </div>
+          <div class="post_information">
+            <p>Time: 2020.9.14</p>
+          </div>
+        </div>
+      </div>
+      <div class="tool-list"></div>
+      <!-- </div>  -->
+    </div>
+
+    <div class="back_to_top"></div>
+  </body>
+  <script>
+    $(".back_to_top").click(function () {
+      v = 0;
+      obj = $(this);
+      setInterval(function () {
+        v -= 10;
+        obj.css({ transform: "translate(0px, " + v + "px)" });
+      }, 10);
+    });
+  </script>
+</html>

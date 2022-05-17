@@ -1,0 +1,86 @@
+/*
+命名规则：类比c，全部下划线
+*/
+
+@font-face {
+    font-family: screen_1;
+    src: url('../font/screen1.ttf');
+}
+.clear {
+    clear: both;
+}
+.header { /*头部大div*/
+    height: 65px;
+    background-color: #eeeff0;
+    position: relative;
+}
+.header_logo { /*logo布局div，位于页面左侧*/
+    float: left;
+    background: url('../img/logo.png') no-repeat;
+    background-size: 160px 65px;
+    width: 200px;
+    height: 100%;
+    background-color: 	#00FF00;
+}
+.header_nav {/*头部导航div, 位于页面右侧*/
+    float: right;
+    font-size: 14px;
+    line-height: 65px;
+    position: absolute;
+    right: 60px;
+}
+.header_nav_text {
+    text-decoration: none;
+    line-height: 65px;
+    height: 65px;
+    display: block;/*这里设置为block后可以更好的设置宽高等*/ 
+    float: left;
+    margin-left: 40px;i
+    color: #14191E;
+}
+.header_nav_text:hover {
+    color: #f00;
+    height: 45px; 
+    /*
+    这里稍微讲一下我的思路：
+    之前在上面已经设置了line-height: 65px;也就是说这个文字已经被固定是65px垂直居中了
+    在这里将height改变，改变的仅仅是原来div的高度，此时高度改变了，底边也会变，然后就可以任意设置border了
+    */
+    border-bottom: 2px #f00 solid;
+}
+
+.header_nav_text_secial {
+    border-radius: 10px;
+    text-decoration: none;
+    display: block;/*这里设置为block后可以更好的设置宽高等*/ 
+    float: left;
+    margin-left: 40px;i
+    font-size: 20px;
+    margin-top: 10px;
+    line-height: 40px;
+    height: 40px;
+    background-color: #000;
+    color: 	#fff;
+}
+
+
+/*头部样式结束，以下为第一屏样式*/
+.screen_1 {
+    background: url('../img/screen-1.jpg') no-repeat;
+    background-size: 1456px 700px;
+    height: 1000px;
+    width: 1456px;
+}
+.screen_1_text_1 {
+    /* margin-top: 100px; */
+    padding-top: 100px;
+    font-size: 130px;
+    font-weight: normal;
+    font-family: screen_1;
+}
+.screen_1_text_2 {
+    padding-left: 145px;
+    font-size: 130px;
+    font-weight: normal;
+    font-family: screen_1;
+}
