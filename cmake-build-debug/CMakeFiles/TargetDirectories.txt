@@ -1,3 +1,0 @@
-/Users/liugaoji/Desktop/Project/SmallProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/liugaoji/Desktop/Project/SmallProject/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/liugaoji/Desktop/Project/SmallProject/cmake-build-debug/CMakeFiles/SmallProject.dir
