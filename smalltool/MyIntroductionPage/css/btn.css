@@ -1,0 +1,65 @@
+.btn-list .btn,
+.btn-list .btn:before,
+.btn-list .btn .fa {
+    transition: all 1s;
+    transition-timing-function:ease-out;
+}
+.btn-list {
+    height: 90px;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;            
+}
+.btn-list .btn {
+    display: inline-block;
+    position: relative;
+    height: 90px;
+    width: 90px;
+    line-height: 90px;
+    margin: 0 100px;
+    overflow: hidden;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 28px;
+    opacity: 0.99;
+    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.1);;
+}
+.btn-list .btn::before {
+    content: "";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    transform: rotate(45deg);
+    right: 130%;
+}
+.btn-list .btn:hover:before {
+    right: -45%;
+}
+.btn-list .btn .fa {
+    vertical-align: middle;
+    font-size: 38px;
+    transform: scale(0.8);
+}
+.btn-list .btn:hover .fa {
+    transform: scale(1);
+    color: #fff !important;
+}
+.btn-list .twitter:before {
+    background-color: #00aff0;
+}
+.btn-list .btn .fa-twitter {
+    color: #00aff0;
+}
+.btn-list .instagram:before {
+    background-color: #bf00ff;
+}
+.btn-list .btn .fa-instagram {
+    color: #bf00ff;
+}
+.IconMove {
+    margin-top: 25px;
+}

@@ -1,0 +1,52 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+.loading_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #222;
+  transition: opacity 1s;
+  /* 居然不支持display */
+  /* transition: display 1s; */
+}
+.loading {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border-top: 3px solid  #9370db;
+  animation: rotate 3s linear infinite;
+}
+.loading::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  border-radius: 50%;
+  border-top: 3px solid #ba55d3;
+  animation: rotate 2s linear infinite;
+}
+.loading::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border-top: 3px solid #f0f;
+  animation: rotate 1s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  } 
+  100% {
+    transform: rotate(360deg);
+  }
+}

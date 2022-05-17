@@ -1,0 +1,60 @@
+.OtherContainer {
+  z-index: 0;
+  position: absolute;
+}
+.loading_container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-color: #222;
+  transition: opacity 1s;
+  /* 居然不支持display */
+  /* transition: display 1s; */
+}
+.loading {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  /* border-top: 4px solid  #9370db; */
+  border-top: 4px solid  #bedcfa;
+  animation: rotate 3s linear infinite;
+}
+.loading::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  border-radius: 50%;
+  /* border-top: 4px solid #ba55d3; */
+  border-top: 4px solid #da9ff9;
+  animation: rotate 2s linear infinite;
+}
+.loading::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border-top: 4px solid #f0f;
+  animation: rotate 1s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  } 
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,93 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-image: linear-gradient(200deg, #78f, #f78);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  transition: 1s;
+}
+
+.MainInformation,
+.detailInformation,
+.contact {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
+  width: 800px;
+  margin: 25px;
+}
+.MainInformation:hover,
+.detailInformation:hover,
+.contact:hover {
+  box-shadow: 20px 20px 20px 2px rgba(0, 0, 0, 0.3);
+}
+
+.MainInformation {
+  position: relative;
+  padding-top: 20px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+}
+.myBriefInformation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-bottom: 20px;
+}
+.myBriefInformation div {
+  font-size: 1.3em;
+}
+.myPic img {
+  border-radius: 180px;
+  transform: scale(1);
+  transform: rotate(0deg);
+}
+.myPic img:hover {
+  transform: scale(1.1);
+  transform: rotate(360deg);
+}
+
+.DetailInformation {
+  height: 200px;
+}
+.skill {
+  display: flex;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  /* justify-content: space-between; */
+}
+.skill div {
+  font-size: 1.1em;
+  flex-basis: 140px;
+}
+.skill progress {
+  height: 30px;
+  width: 800px;
+  border: none;
+  flex-basis: 600px;
+  border-radius: 100px;
+  background: #e6eeff;
+}
+.skill progress::-webkit-progress-bar {
+  border: none;
+  border-radius: 100px;
+  background: #e6eeff;
+}
+.skill progress::-webkit-progress-value {
+  border: none;
+  border-radius: 100px;
+  background: linear-gradient(90deg, #78f, #f78);
+}
+
+.contact {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 150px;
+}
