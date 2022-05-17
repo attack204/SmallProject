@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/css/mdui.min.css"
+        integrity="sha384-2PJ2u4NYg6jCNNpv3i1hK9AoAqODy6CdiC+gYiL2DVx+ku5wzJMFNdE3RoWfBIRP" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"
+        integrity="sha384-aB8rnkAu/GBsQ1q6dwTySnlrrbhqDwrDnpVHR2Wgm8pWLbwUnzDcIROX3VvCbaK+"
+        crossorigin="anonymous"></script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+    <title>观海听涛纳新系统</title>
+    <style>
+        * {
+            margin: 0px;
+        }
+
+        .mdui-list {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .mdui-card {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .panel {
+            width: 1000px;
+            height: 800px;
+            margin-top: 20px;
+            border-radius: 20px;
+            /*设置圆角*/
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .panel-headline {
+            padding-top: 20px;
+            font-size: 20px;
+            padding-bottom: 10px;
+        }
+
+        .basic_information {
+            display: grid;
+            grid-template-columns: 400px 550px;
+            grid-column-gap: 20px;
+        }
+
+        .detail_information {
+            width: 960px;
+            height: 600px;
+            /* background-color: #f00; */
+            display: grid;
+            grid-template-columns: 120px 840px;
+        }
+
+        .detail_left,
+        .detail_right_top,
+        .detail_right_bottom {
+            border: 1px #A9A9A9 solid;
+        }
+
+        .list_style {
+            height: 600px;
+        }
+
+        .detail_left {
+            height: 500px;
+
+            overflow: scroll;
+        }
+
+        .list-item {
+            border: 1px #A9A9A9 solid;
+            display: grid;
+            justify-items: center;
+        }
+
+        .detail_right {
+            display: grid;
+            grid-template-rows: 70px 430px;
+        }
+
+        .day_card {
+            float: left;
+            width: 117.7px;
+            height: 70px;
+            border: 1px #A9A9A9 solid;
+        }
+
+        .detail_right_bottom {
+            /* display: grid; */
+            /* grid-template-rows: repeat(6, 72px); */
+            /* grid-template-columns: repeat(7, 120px); */
+        }
+
+        .lesson_card {
+            height: 72px;
+            width: 117.5px;
+            float: left;
+            border: 1px #000 solid;
+        }
+    </style>
+</head>
+
+
+<body class="mdui-theme-accent-indigo mdui-theme-primary-indigo mdui-appbar-with-toolbar">
+
+
+    <!--This is the head of website-->
+    <div class="mdui-appbar mdui-appbar-fixed">
+        <div class="mdui-toolbar mdui-color-theme-accent">
+            <!-- <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a> -->
+            <h2>观海听涛排班系统</h2>
+        </div>
+    </div>
+
+    <!--This is the main element of website-->
+    <div class="mdui-container panel  mdui-shadow-24">
+        <p class="panel-headline mdui-text-color-theme-accent">排班系统</p>
+        <hr>
+
+        <div class="basic_information">
+            <!--这里填写姓名和学号-->
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">姓名</label>
+                <textarea id="Name" class="mdui-textfield-input"></textarea>
+            </div>
+
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">学号</label>
+                <textarea id="StudentID" class="mdui-textfield-input"></textarea>
+            </div>
+        </div>
+
+        <!-- <hr> -->
+
+        <div class="detail_information">
+            <!--这是具体的排版页面大概分左右两栏
+                左边是一个选择第几周的东西
+                右边又分两层，第一层是星期，第二层是有无课-->
+            <div class="detail_left">
+                <div id="LeftList" class="mdui-list list_style">
+                    <!--
+                    <a href="#" class="mdui-list-item list-item">第一周</a>
+                    <a href="#" class="mdui-list-item list-item">第二周</a>
+                    <a href="#" class="mdui-list-item list-item">第三周</a>
+                    <a href="#" class="mdui-list-item list-item">第四周</a>
+                -->
+                </div>
+            </div>
+            <div class="detail_right">
+                <div class="detail_right_top">
+                    <div class="day_card">星期一</div>
+                    <div class="day_card">星期二</div>
+                    <div class="day_card">星期三</div>
+                    <div class="day_card">星期四</div>
+                    <div class="day_card">星期五</div>
+                    <div class="day_card">星期六</div>
+                    <div class="day_card">星期日</div>
+                </div>
+                <!--7 * 6 = 42-->
+                <div id="Right1" class="detail_right_bottom">
+                    <!--<div class="lesson_card" style="background-color: #A9A9A9"></div>-->
+                </div>
+            </div>
+        </div>
+        <button id="submit" class="mdui-btn mdui-btn-block mdui-color-indigo-accent">提交</button>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        var CurWeek = 1; //当前选择的是第几周
+        function AddELement() {
+            /*以下添加左侧元素*/
+            for (var i = 1; i <= 20; i++) {
+                ele = "<a href='#' id='Left" + i + "' class='mdui-list-item list-item'>第" + i + "周</a>";
+                //注意这里一定要写成单引号与双引号交替的结构
+                $("#LeftList").append(ele);
+            }
+            /*以下代码生成第一周的表格，开始时是显示的*/
+            for (var j = 1; j <= 6; j++) {/*枚举每一节课*/
+                for (var i = 1; i <= 7; i++) {/*枚举天数*/
+                    ele = "<div id='" + 1 + i + j + "'class='lesson_card' style='background-color: #A9A9A9'></div>";
+                    $("#Right1").append(ele);
+                }
+            }
+            /*以下代码生成其他周的表格，注意，一开始这些表格的display都是none
+            */
+            for (var k = 2; k <= 20; k++) {
+                divContainer = '<div id="Right' + k + '" class="detail_right_bottom"></div>';
+                $(".detail_right").append(divContainer);
+                $("#Right" + k).css({
+                    "display": "none"
+                });
+                for (var j = 1; j <= 6; j++) {/*枚举每一节课*/
+                    for (var i = 1; i <= 7; i++) {/*枚举天数*/  
+                        ele = "<div id='" + k + i + j + "'class='lesson_card' style='background-color: #A9A9A9'></div>";
+                        $("#Right" + k).append(ele);
+                    }
+                }
+            }
+
+        }
+        AddELement();
+        function Rand16() {
+            var x = 16 - Math.random() * 7;
+            x = parseInt(x);
+            var res;
+            if (x == 11) res = 'A';
+            else if (x == 12) res = 'B';
+            else if (x == 13) res = 'C';
+            else if (x == 14) res = 'D';
+            else if (x == 15) res = 'E';
+            else if (x == 16) res = 'F';
+            else return 'F';
+            return res;
+        }
+        $(".lesson_card").click(function () {
+            var a = Rand16() + Rand16() + Rand16();
+            if ($(this).css("background-color") == "rgb(169, 169, 169)") {
+                $(this).css({ "background-color": "#" + a });
+            }
+            else {
+                $(this).css({ "background-color": "#A9A9A9" });
+            }
+
+        });
+        $(".list-item").click(function () {
+            var id1 = $(this).attr("id")[4];
+            var id2 = $(this).attr("id")[5]; /*返回的是字符类型*/
+            var id;
+            if (typeof (id2) == "undefined") id = id1;
+            else id = id1 + id2;
+            $("#Right" + CurWeek).css({
+                "display": "none"
+            });
+            $("#Right" + id).css({
+                "display": "block"
+            });
+            CurWeek = id;
+        });
+        $("#submit").click(function() {
+            var name = $("#Name").val();
+            var studentid = $("#StudentID").val();
+            for(var k = 1; k <= 1; k++) {/*周*/
+                var data = new Object;
+                data.week = k;
+                data.name = name;
+                data.id   = studentid;
+                data.busy = new Array();
+                for(var i = 1; i <= 7; i++) {/*天*/
+                    for(var j = 1; j <= 4; j++) {/*课时*/
+                        if($("#" + k + i + j).css("background-color") != "rgb(169, 169, 169)") {
+                            var ele = new Object;
+                            ele.busyday = i;
+                            ele.busytime = j;
+                            data.busy.push(ele);
+                        }
+                    }
+                }
+            }
+            $.post("http://www.fizzmy.club/index.php/paiban/getform", data, 
+            function(status) {
+                if(status == 1) alert("成功");
+                else alert("失败");
+            });
+        });
+    })
+</script>
+
+</html>

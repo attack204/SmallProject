@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/css/mdui.min.css"
+    integrity="sha384-2PJ2u4NYg6jCNNpv3i1hK9AoAqODy6CdiC+gYiL2DVx+ku5wzJMFNdE3RoWfBIRP"
+    crossorigin="anonymous"
+    />
+    <script
+    src="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"
+    integrity="sha384-aB8rnkAu/GBsQ1q6dwTySnlrrbhqDwrDnpVHR2Wgm8pWLbwUnzDcIROX3VvCbaK+"
+    crossorigin="anonymous"
+    ></script>
+
+    <title>观海听涛纳新系统</title>
+    <style>
+        * {
+            margin: 0px;
+        }
+        .mdui-list {
+            margin: 0px;
+            padding: 0px;
+        }
+        .mdui-card {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .panel {
+            width: 1000px;
+            height: 800px;
+            margin-top: 20px;
+            border-radius: 20px; /*设置圆角*/
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .panel-headline {
+            padding-top: 20px;
+            font-size: 20px;
+            padding-bottom: 10px;
+        }
+        .basic_information {
+            display: grid;
+            grid-template-columns: 400px 550px;
+            grid-column-gap : 20px; 
+        }
+        .detail_information {
+            width: 960px;
+            height: 600px;
+            /* background-color: #f00; */
+            display: grid;
+            grid-template-columns: 120px 840px;
+        }
+        .detail_left, .detail_right_top, .detail_right_bottom {
+            border: 1px #A9A9A9 solid;
+        }
+        .list_style {
+            height: 600px;
+        }
+        .detail_left {
+            height: 500px;
+            
+            overflow: scroll;
+        }
+        .list-item {
+            border: 1px #A9A9A9 solid;
+            display: grid;
+            justify-items: center;
+        }
+
+        .detail_right {
+            display: grid;
+            grid-template-rows: 70px 430px;
+        }
+        .day_card{
+            float: left;
+            width: 117.7px;
+            height: 70px;
+            border: 1px #A9A9A9 solid;
+        }
+        .detail_right_bottom {
+            display: grid;
+            grid-template-rows: repeat(6, 72px);
+            grid-template-columns: repeat(7, 120px);
+        }
+        .lesson_card {
+            border: 1px #000 solid;
+        }
+    </style>
+</head>
+
+
+<body class="mdui-theme-accent-indigo mdui-theme-primary-indigo mdui-appbar-with-toolbar">
+
+
+    <!--This is the head of website-->
+    <div class="mdui-appbar mdui-appbar-fixed">
+        <div class="mdui-toolbar mdui-color-theme-accent">
+            <!-- <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a> -->
+            <h2>观海听涛排班系统</h2>
+        </div>
+    </div>
+
+    <!--This is the main element of website-->
+    <div class="mdui-container panel  mdui-shadow-24">
+        <p class="panel-headline mdui-text-color-theme-accent">排班系统</p>
+        <hr>
+
+        <div class="basic_information"> <!--这里填写姓名和学号-->
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">姓名</label>
+                <textarea class="mdui-textfield-input"></textarea>
+            </div>
+
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">学号</label>
+                <textarea class="mdui-textfield-input"></textarea>
+            </div>
+        </div>
+
+        <!-- <hr> -->
+
+        <div class="detail_information">
+            <!--这是具体的排版页面大概分左右两栏
+                左边是一个选择第几周的东西
+                右边又分两层，第一层是星期，第二层是有无课-->
+            <div class="detail_left">  
+                <div class="mdui-list list_style">
+                    <a href="#" class="mdui-list-item list-item">第一周</a>
+                    <a href="#" class="mdui-list-item list-item">第二周</a>
+                    <a href="#" class="mdui-list-item list-item">第三周</a>
+                    <a href="#" class="mdui-list-item list-item">第四周</a>
+                    <a href="#" class="mdui-list-item list-item">第五周</a>
+                    <a href="#" class="mdui-list-item list-item">第六周</a>
+                    <a href="#" class="mdui-list-item list-item">第七周</a>
+                    <a href="#" class="mdui-list-item list-item">第七周</a>
+                    <a href="#" class="mdui-list-item list-item">第七周</a>
+                    <a href="#" class="mdui-list-item list-item">第七周</a>
+                    <a href="#" class="mdui-list-item list-item">第七周</a>
+                    <a href="#" class="mdui-list-item list-item">第七周</a>
+                </div>
+            </div>
+
+            <div class="detail_right">
+                <div class="detail_right_top">
+                    <div class="day_card">星期一</div>
+                    <div class="day_card">星期二</div>
+                    <div class="day_card">星期三</div>
+                    <div class="day_card">星期四</div>
+                    <div class="day_card">星期五</div>
+                    <div class="day_card">星期六</div>
+                    <div class="day_card">星期日</div>
+                </div>
+                <div class="detail_right_bottom">
+                    <div class="lesson_card" style="background-color: #f00"></div>
+                    <div class="lesson_card" style="background-color: #ff0"></div>
+                    <div class="lesson_card" style="background-color: #f0f"></div>
+                    <div class="lesson_card" style="background-color: #a00"></div>
+                    <div class="lesson_card" style="background-color: #00FFFF"></div>
+                    <div class="lesson_card" style="background-color: #FFD700"></div>
+                    <div class="lesson_card" style="background-color: #00FA9A"></div>
+
+                    <div class="lesson_card" style="background-color: #f00"></div>
+                    <div class="lesson_card" style="background-color: #ff0"></div>
+                    <div class="lesson_card" style="background-color: #f0f"></div>
+                    <div class="lesson_card" style="background-color: #a00"></div>
+                    <div class="lesson_card" style="background-color: #00FFFF"></div>
+                    <div class="lesson_card" style="background-color: #FFD700"></div>
+                    <div class="lesson_card" style="background-color: #00FA9A"></div>
+
+
+                    <div class="lesson_card" style="background-color: #f00"></div>
+                    <div class="lesson_card" style="background-color: #ff0"></div>
+                    <div class="lesson_card" style="background-color: #f0f"></div>
+                    <div class="lesson_card" style="background-color: #a00"></div>
+                    <div class="lesson_card" style="background-color: #00FFFF"></div>
+                    <div class="lesson_card" style="background-color: #FFD700"></div>
+                    <div class="lesson_card" style="background-color: #00FA9A"></div>
+
+
+                    <div class="lesson_card" style="background-color: #f00"></div>
+                    <div class="lesson_card" style="background-color: #ff0"></div>
+                    <div class="lesson_card" style="background-color: #f0f"></div>
+                    <div class="lesson_card" style="background-color: #a00"></div>
+                    <div class="lesson_card" style="background-color: #00FFFF"></div>
+                    <div class="lesson_card" style="background-color: #FFD700"></div>
+                    <div class="lesson_card" style="background-color: #00FA9A"></div>
+
+
+                    <div class="lesson_card" style="background-color: #f00"></div>
+                    <div class="lesson_card" style="background-color: #ff0"></div>
+                    <div class="lesson_card" style="background-color: #f0f"></div>
+                    <div class="lesson_card" style="background-color: #a00"></div>
+                    <div class="lesson_card" style="background-color: #00FFFF"></div>
+                    <div class="lesson_card" style="background-color: #FFD700"></div>
+                    <div class="lesson_card" style="background-color: #00FA9A"></div>
+
+                    <div class="lesson_card" style="background-color: #f00"></div>
+                    <div class="lesson_card" style="background-color: #ff0"></div>
+                    <div class="lesson_card" style="background-color: #f0f"></div>
+                    <div class="lesson_card" style="background-color: #a00"></div>
+                    <div class="lesson_card" style="background-color: #00FFFF"></div>
+                    <div class="lesson_card" style="background-color: #FFD700"></div>
+                    <div class="lesson_card" style="background-color: #00FA9A"></div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <button class="mdui-btn mdui-btn-block mdui-color-indigo-accent">提交</button>
+        
+
+
+
+    </div>
+
+
+
+</body>
+
+
+</html>
