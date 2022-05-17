@@ -1,0 +1,552 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+	<script>
+		var _hmt = _hmt || [];
+		(function () {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?b181f6b87abc27fa3625c3ef161adfc4";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>Welcome</title>
+	</head>
+	<script src="./sakura.js"></script>
+	<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.2/css/mdui.min.css">
+	<script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.2/js/mdui.min.js"></script>
+	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	<script>
+		var $$ = mdui.JQ;
+		var VisitorNum;
+
+		$(document).ready(function () {
+			// alert(1);
+			setTimeout(function () {//这里用延迟执行的原因是busuanzi_value这个里面的内容加载的比较慢，需要等一会儿才能获取到
+				VisitorNum = document.getElementById("busuanzi_value_site_pv").innerHTML;
+				mdui.snackbar({
+					message: "欢迎本站的第" + VisitorNum + "位访客",
+					timeout: 1000,
+					position: 'bottom',
+					buttonText: "Close",
+				});
+			}, 500)
+
+			$("#DrawerControl").click(function () {
+				var dar = new mdui.Drawer('#drawer');
+				dar.toggle();
+			});
+		});
+
+	</script>
+
+	<style>
+		.maincard {
+			margin: 5% 10% 0% 10%;
+
+		}
+
+		.about {
+			margin-top: 10px;
+			margin-left: 10%;
+			padding: 2%;
+		}
+
+		.footer {
+			color: black;
+			text-align: center;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			display: inline;
+			font-family: Georgia, 'Times New Roman', Times, serif;
+		}
+
+		.showarea {
+			opacity: 0.9;
+			background-color: white;
+		}
+
+		#busuanzi_container_site_pv {
+			display: none !important;
+		}
+
+		#mainicon {
+			float: left;
+			border: 3px solid;
+			border-color: aqua;
+			border-radius: 50%;
+			transition: transform 1s;
+			max-width: 50%;
+			display: block;
+		}
+
+		#mainicon:hover {
+			transform: rotate(720deg);
+			animation: IconScale 1s;
+		}
+
+		.draw {
+			position: fixed;
+			width: 1px;
+			line-height: 1px;
+			pointer-events: none;
+		}
+
+		canvas {
+			top: 0;
+			padding: 0;
+			margin: 0;
+			position: absolute;
+			z-index: -1;
+			left: 0px;
+		}
+
+		@media screen and (max-width: 480px) {
+			#mainicon {
+				position: relative;
+				float: top;
+				display: block;
+				/* -right:100px; */
+			}
+		}
+	</style>
+</head>
+
+<body class="mdui-theme-primary-indigo mdui-theme-accent-pink ">
+
+	<!-- top-nav -->
+	<div class="mdui-appbar">
+		<div class="mdui-toolbar mdui-color-indigo">
+			<a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#drawer'}"><i
+					class="mdui-icon material-icons">menu</i></a>
+		</div>
+	</div>
+
+	<!-- left-drawer -->
+	<div class="mdui-drawer mdui-drawer-close showarea" id="drawer">
+		<ul class="mdui-list">
+			<li class="mdui-list-item mdui-ripple" mdui-drawer-close>
+				<i class="mdui-list-item-icon mdui-icon material-icons">refresh</i>
+				<div class="mdui-list-item-content" onclick="location.reload();">
+					刷新
+				</div>
+			</li>
+		</ul>
+	</div>
+
+
+	<!-- main-area -->
+	<div class="mdui-container">
+		<div class="showarea maincard  mdui-shadow-3 mdui-hoverable">
+			
+			<div class="mydata">
+				<a href="https://blog.attack204.com" target="_blank">
+					<img id="mainicon" src='/img/head.png'>
+					</img>
+				</a>
+				<ul class="mdui-list">
+					<li class="mdui-list-item">
+						<i class="mdui-icon material-icons">perm_identity</i>
+						<span><strong>常用ID:</strong>
+							<p style="display: inline;">attack204</p>
+						</span>
+					</li>
+					<li class="mdui-list-item">
+						<i class="mdui-icon material-icons">date_range</i>
+						<span><strong>生产日期:</strong>
+							<p style="display: inline;">2002</p>
+						</span>
+					</li>
+
+					<li class="mdui-list-item">
+						<i class="mdui-icon material-icons">place</i>
+						<span><strong>产地:</strong>
+							<p style="display: inline;">山东</p>
+						</span>
+					</li>
+
+					<li class="mdui-list-item">
+						<i class="mdui-icon material-icons">textsms</i>
+						<span><strong>简介:</strong>
+							<p style="display: inline;">一只爱念诗的程序猿</p>
+						</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- main-area -->
+
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	</link>
+
+	<div class="mdui-container">
+		<div style="height: 300px;" class="showarea about mdui-shadow-3 mdui-hoverable mdui-col-xs-4">
+			<h2>关于我</h2>
+			<p>目前就读于某九线小县城的唯一一所中学</p>
+			<p>热爱数学、算法与数据结构，曾经是一名OIer</p>
+			<p>最近刚刚入坑前端</p>
+			<p>没有学上XD</p>
+			<br>
+			<br>
+		</div>
+
+		<div style="height: 300px; margin-top: 10px; padding: 2%;  margin-left: 1.5%; max-width: 45%;"
+			class="showarea mdui-shadow-3 mdui-hoverable mdui-col-xs-6">
+			<h2>联系我</h2>
+			<ul style="height: 165px;" class="mdui-list">
+
+				<a href="https://blog.attack204.com" target="_blank">
+					<li class="mdui-list-item mdui-ripple">
+						<i class="fa fa-book fa-fw"></i>
+						Blog
+					</li>
+				</a>
+
+				<a href="http://wpa.qq.com/msgrd?v=3&uin=757394026&site=qq&menu=yes" target="_blank">
+					<li class="mdui-list-item mdui-ripple">
+						<i class="fa fa-qq fa-fw"></i>
+						QQ
+					</li>
+				</a>
+
+				<a href="https://github.com/attack204" target="_blank">
+					<li class="mdui-list-item mdui-ripple">
+						<i class="fa fa-github fa-fw"></i>
+						Github
+					</li>
+				</a>
+
+				<a href="mailto:757394026@qq.com" target="_blank">
+					<li class="mdui-list-item mdui-ripple">
+						<i class="fa fa-envelope fa-fw"> </i>
+						Email
+					</li>
+				</a>
+
+			</ul>
+		</div>
+	</div>
+
+
+
+	<div class="footer">
+		<p>&copy;
+			<script>document.write(new Date().getFullYear())</script>
+			attack204
+		</p>
+		<p>Produced By attack204</p>
+		<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+	</div>
+
+
+
+	　　　　<canvas id="sakura"></canvas>
+	<script>
+		if ('addEventListener' in window) {
+			window.addEventListener('load', function () { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+			document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+		}
+	</script>
+	<script id="sakura_point_vsh" type="x-shader/x_vertex">
+uniform mat4 uProjection;
+uniform mat4 uModelview;
+uniform vec3 uResolution;
+uniform vec3 uOffset;
+uniform vec3 uDOF;  //x:focus distance, y:focus radius, z:max radius
+uniform vec3 uFade; //x:start distance, y:half distance, z:near fade start
+
+attribute vec3 aPosition;
+attribute vec3 aEuler;
+attribute vec2 aMisc; //x:size, y:fade
+
+varying vec3 pposition;
+varying float psize;
+varying float palpha;
+varying float pdist;
+
+//varying mat3 rotMat;
+varying vec3 normX;
+varying vec3 normY;
+varying vec3 normZ;
+varying vec3 normal;
+
+varying float diffuse;
+varying float specular;
+varying float rstop;
+varying float distancefade;
+
+void main(void) {
+// Projection is based on vertical angle
+vec4 pos = uModelview * vec4(aPosition + uOffset, 1.0);
+gl_Position = uProjection * pos;
+gl_PointSize = aMisc.x * uProjection[1][1] / -pos.z * uResolution.y * 0.5;
+
+pposition = pos.xyz;
+psize = aMisc.x;
+pdist = length(pos.xyz);
+palpha = smoothstep(0.0, 1.0, (pdist - 0.1) / uFade.z);
+
+vec3 elrsn = sin(aEuler);
+vec3 elrcs = cos(aEuler);
+mat3 rotx = mat3(
+1.0, 0.0, 0.0,
+0.0, elrcs.x, elrsn.x,
+0.0, -elrsn.x, elrcs.x
+);
+mat3 roty = mat3(
+elrcs.y, 0.0, -elrsn.y,
+0.0, 1.0, 0.0,
+elrsn.y, 0.0, elrcs.y
+);
+mat3 rotz = mat3(
+elrcs.z, elrsn.z, 0.0, 
+-elrsn.z, elrcs.z, 0.0,
+0.0, 0.0, 1.0
+);
+mat3 rotmat = rotx * roty * rotz;
+normal = rotmat[2];
+
+mat3 trrotm = mat3(
+rotmat[0][0], rotmat[1][0], rotmat[2][0],
+rotmat[0][1], rotmat[1][1], rotmat[2][1],
+rotmat[0][2], rotmat[1][2], rotmat[2][2]
+);
+normX = trrotm[0];
+normY = trrotm[1];
+normZ = trrotm[2];
+
+const vec3 lit = vec3(0.6917144638660746, 0.6917144638660746, -0.20751433915982237);
+
+float tmpdfs = dot(lit, normal);
+if(tmpdfs < 0.0) {
+normal = -normal;
+tmpdfs = dot(lit, normal);
+}
+diffuse = 0.4 + tmpdfs;
+
+vec3 eyev = normalize(-pos.xyz);
+if(dot(eyev, normal) > 0.0) {
+vec3 hv = normalize(eyev + lit);
+specular = pow(max(dot(hv, normal), 0.0), 20.0);
+}
+else {
+specular = 0.0;
+}
+
+rstop = clamp((abs(pdist - uDOF.x) - uDOF.y) / uDOF.z, 0.0, 1.0);
+rstop = pow(rstop, 0.5);
+//-0.69315 = ln(0.5)
+distancefade = min(1.0, exp((uFade.x - pdist) * 0.69315 / uFade.y));
+}
+</script>
+	<script id="sakura_point_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+//precision mediump float;
+precision highp float;
+#endif
+
+uniform vec3 uDOF;  //x:focus distance, y:focus radius, z:max radius
+uniform vec3 uFade; //x:start distance, y:half distance, z:near fade start
+
+const vec3 fadeCol = vec3(0.08, 0.03, 0.06);
+
+varying vec3 pposition;
+varying float psize;
+varying float palpha;
+varying float pdist;
+
+//varying mat3 rotMat;
+varying vec3 normX;
+varying vec3 normY;
+varying vec3 normZ;
+varying vec3 normal;
+
+varying float diffuse;
+varying float specular;
+varying float rstop;
+varying float distancefade;
+
+float ellipse(vec2 p, vec2 o, vec2 r) {
+vec2 lp = (p - o) / r;
+return length(lp) - 1.0;
+}
+
+void main(void) {
+vec3 p = vec3(gl_PointCoord - vec2(0.5, 0.5), 0.0) * 2.0;
+vec3 d = vec3(0.0, 0.0, -1.0);
+float nd = normZ.z; //dot(-normZ, d);
+if(abs(nd) < 0.0001) discard;
+
+float np = dot(normZ, p);
+vec3 tp = p + d * np / nd;
+vec2 coord = vec2(dot(normX, tp), dot(normY, tp));
+
+//angle = 15 degree
+const float flwrsn = 0.258819045102521;
+const float flwrcs = 0.965925826289068;
+mat2 flwrm = mat2(flwrcs, -flwrsn, flwrsn, flwrcs);
+vec2 flwrp = vec2(abs(coord.x), coord.y) * flwrm;
+
+float r;
+if(flwrp.x < 0.0) {
+r = ellipse(flwrp, vec2(0.065, 0.024) * 0.5, vec2(0.36, 0.96) * 0.5);
+}
+else {
+r = ellipse(flwrp, vec2(0.065, 0.024) * 0.5, vec2(0.58, 0.96) * 0.5);
+}
+
+if(r > rstop) discard;
+
+vec3 col = mix(vec3(1.0, 0.8, 0.75), vec3(1.0, 0.9, 0.87), r);
+float grady = mix(0.0, 1.0, pow(coord.y * 0.5 + 0.5, 0.35));
+col *= vec3(1.0, grady, grady);
+col *= mix(0.8, 1.0, pow(abs(coord.x), 0.3));
+col = col * diffuse + specular;
+
+col = mix(fadeCol, col, distancefade);
+
+float alpha = (rstop > 0.001)? (0.5 - r / (rstop * 2.0)) : 1.0;
+alpha = smoothstep(0.0, 1.0, alpha) * palpha;
+
+gl_FragColor = vec4(col * 0.5, alpha);
+}
+</script>
+	<!-- effects -->
+	<script id="fx_common_vsh" type="x-shader/x_vertex">
+uniform vec3 uResolution;
+attribute vec2 aPosition;
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+gl_Position = vec4(aPosition, 0.0, 1.0);
+texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
+screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
+}
+</script>
+	<script id="bg_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+//precision mediump float;
+precision highp float;
+#endif
+
+uniform vec2 uTimes;
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+vec3 col;
+float c;
+vec2 tmpv = texCoord * vec2(0.8, 1.0) - vec2(0.95, 1.0);
+c = exp(-pow(length(tmpv) * 1.8, 2.0));
+col = mix(vec3(0.02, 0.0, 0.03), vec3(0.96, 0.98, 1.0) * 1.5, c);
+gl_FragColor = vec4(col * 0.5, 1.0);
+}
+</script>
+	<script id="fx_brightbuf_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+//precision mediump float;
+precision highp float;
+#endif
+uniform sampler2D uSrc;
+uniform vec2 uDelta;
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+vec4 col = texture2D(uSrc, texCoord);
+gl_FragColor = vec4(col.rgb * 2.0 - vec3(0.5), 1.0);
+}
+</script>
+	<script id="fx_dirblur_r4_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+//precision mediump float;
+precision highp float;
+#endif
+uniform sampler2D uSrc;
+uniform vec2 uDelta;
+uniform vec4 uBlurDir; //dir(x, y), stride(z, w)
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+vec4 col = texture2D(uSrc, texCoord);
+col = col + texture2D(uSrc, texCoord + uBlurDir.xy * uDelta);
+col = col + texture2D(uSrc, texCoord - uBlurDir.xy * uDelta);
+col = col + texture2D(uSrc, texCoord + (uBlurDir.xy + uBlurDir.zw) * uDelta);
+col = col + texture2D(uSrc, texCoord - (uBlurDir.xy + uBlurDir.zw) * uDelta);
+gl_FragColor = col / 5.0;
+}
+</script>
+	<!-- effect fragment shader template -->
+	<script id="fx_common_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+//precision mediump float;
+precision highp float;
+#endif
+uniform sampler2D uSrc;
+uniform vec2 uDelta;
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+gl_FragColor = texture2D(uSrc, texCoord);
+}
+</script>
+	<!-- post processing -->
+	<script id="pp_final_vsh" type="x-shader/x_vertex">
+uniform vec3 uResolution;
+attribute vec2 aPosition;
+varying vec2 texCoord;
+varying vec2 screenCoord;
+void main(void) {
+gl_Position = vec4(aPosition, 0.0, 1.0);
+texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
+screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
+}
+</script>
+	<script id="pp_final_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+//precision mediump float;
+precision highp float;
+#endif
+uniform sampler2D uSrc;
+uniform sampler2D uBloom;
+uniform vec2 uDelta;
+varying vec2 texCoord;
+varying vec2 screenCoord;
+void main(void) {
+vec4 srccol = texture2D(uSrc, texCoord) * 2.0;
+vec4 bloomcol = texture2D(uBloom, texCoord);
+vec4 col;
+col = srccol + bloomcol * (vec4(1.0) + srccol);
+col *= smoothstep(1.0, 0.0, pow(length((texCoord - vec2(0.5)) * 2.0), 1.2) * 0.5);
+col = pow(col, vec4(0.45454545454545)); //(1.0 / 2.2)
+
+gl_FragColor = vec4(col.rgb, 1.0);
+gl_FragColor.a = 1.0;
+}
+</script>
+
+</body>
+
+
+
+
+
+</html>
