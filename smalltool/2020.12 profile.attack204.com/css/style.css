@@ -1,0 +1,55 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-image: linear-gradient(200deg, #78f, #f78);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  transition: 1s;
+}
+
+.MainInformation,
+#detailInformation {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
+  width: 800px;
+  margin: 25px;
+  padding: 20px;
+}
+.MainInformation:hover,
+#detailInformation:hover{
+  box-shadow: 20px 20px 20px 2px rgba(0, 0, 0, 0.3);
+}
+
+.MainInformation {
+  position: relative;
+  padding-top: 20px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+}
+.myBriefInformation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-bottom: 20px;
+}
+.myBriefInformation div {
+  font-size: 1.3em;
+}
+.myPic img {
+  border-radius: 180px;
+  transform: scale(1);
+  transform: rotate(0deg);
+}
+.myPic img:hover {
+  transform: scale(1.1);
+  transform: rotate(360deg);
+}
+
+

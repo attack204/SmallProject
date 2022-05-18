@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+
+    <head>
+        <meta name="generator" content="Hexo 3.8.0">
+        <meta charset="utf-8">
+        <meta name="keywords" content="MathChallenge">
+        <meta name="description" content="MathChallenge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+        <title>MathChallenge</title>
+    </head>
+
+    <link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.2/css/mdui.min.css">
+    <script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.2/js/mdui.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body {
+            background-image: url("../background.jpg");
+        }
+    </style>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'
+    async></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            showProcessingMessages: false, //关闭js加载过程信息
+            messageStyle: "none", //不显示信息
+            extensions: ["tex2jax.js"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+            tex2jax: {
+                inlineMath:  [ ["$", "$"] ], //行内公式选择$
+                displayMath: [ ["$$","$$"] ], //段内公式选择$$
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'], //避开某些标签
+        //        ignoreClass:"comment-content" //避开含该Class的标签
+            },
+            "HTML-CSS": {
+                availableFonts: ["STIX","TeX"], //可选字体
+                showMathMenu: false //关闭右击菜单显示
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    </script>
+    <script>
+        function load(name) {
+            let xhr = new XMLHttpRequest(),
+                okStatus = document.location.protocol === "file:" ? 0 : 200;
+            xhr.open('GET', name, false);
+            xhr.overrideMimeType("text/html;charset=utf-8");//默认为utf-8
+            xhr.send(null);
+            return xhr.status === okStatus ? xhr.responseText : null;
+        }
+
+        $(document).ready(function () {
+            var pname = location.href.split("sol.html")[1], res = 0;
+           // alert(pname);
+            for (var i = 0; i < pname.length; i++) {
+                // alert(pname[i]);
+                if (pname[i] >= 0 && pname[i] <= 9) {
+                    if (res == 0)
+                        res = pname[i];
+                    else
+                        res = res * 10 + pname[i];
+                }
+            }
+            res = "sol" + res + ".md";
+            var txt = load(res);
+            $("#soltext").html(marked(txt));
+        });
+    </script>
+</head>
+
+
+
+
+<body class="mdui-theme-primary-pink mdui-theme-accent-pink mdui-container">
+    <div class="mdui-container" style="margin-top:5%">
+        <div class="mdui-row">
+            <div class="mdui-card"> 
+                <div style="margin-left: 5%;" id="soltext">
+                    123
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+</html>

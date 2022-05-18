@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+
+    <head>
+        <meta name="generator" content="Hexo 3.8.0">
+        <meta charset="utf-8">
+        <meta name="keywords" content="MathChallenge">
+        <meta name="description" content="MathChallenge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+        <title>MathChallenge</title>
+    </head>
+
+    <link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.2/css/mdui.min.css">
+    <script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.2/js/mdui.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            background-image: url("./background.jpg");
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            var dig = new mdui.Dialog('#diglog');
+            //dig.open();
+        });
+    </script>
+</head>
+
+
+
+
+<body class="mdui-theme-primary-pink mdui-theme-accent-pink">
+
+
+    <!-- top-nav -->
+    <div class="mdui-appbar">
+        <div class="mdui-toolbar mdui-color-indigo">
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#drawer'}"><i
+                    class="mdui-icon material-icons">menu</i></a>
+            <a href="./update.html" class="mdui-btn" target="_blank">更新日志</a>
+        </div>
+    </div>
+
+    <!-- left-drawer -->
+    <div class="mdui-drawer mdui-drawer-close showarea mdui-card" id="drawer">
+        <ul class="mdui-list">
+            <li class="mdui-list-item mdui-ripple" mdui-drawer-close>
+                <i class="mdui-list-item-icon mdui-icon material-icons">refresh</i>
+                <div class="mdui-list-item-content" onclick="location.reload();">
+                    刷新
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+    <div class="mdui-container">
+        <div class="mdui-img-fluid" align="center" style="margin:auto">
+            <img class="mdui-ripple" width=200px src="./logo.png">
+        </div>
+    </div>
+
+    <div class="mdui-container">
+        <div class="mdui-table-fluid">
+            <table class="mdui-table mdui-table-hoverable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>题目名称</th>
+                        <th>分类</th>
+                        <th>难度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><a href="./pro/pro.html?=1" target="_blank">小a的不等式</td>
+                        <td>不等式，脑洞题</td>
+                        <td>★★</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><a href="./pro/pro.html?=2" target="_blank">小a的新班级</td>
+                        <td>概率</td>
+                        <td>★</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><a href="./pro/pro.html?=3" target="_blank">小a的几何体</td>
+                        <td>空间几何</td>
+                        <td>★★</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><a href="./pro/pro.html?=4" target="_blank">小a的新学期</td>
+                        <td>组合数学</td>
+                        <td>★★★★</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+</body>
+
+
+
+</html>

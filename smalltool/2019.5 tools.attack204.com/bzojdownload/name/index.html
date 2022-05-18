@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+
+    <head>
+        <meta name="generator" content="Hexo 3.8.0">
+        <meta charset="utf-8">
+        <meta name="keywords" content="BZOJ数据下载">
+        <meta name="description" content="BZOJ数据下载">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+        <title>BZOJ数据下载</title>
+    </head>
+    <script type="text/javascript">
+        function load(name) {
+            let xhr = new XMLHttpRequest(),
+                okStatus = document.location.protocol === "file:" ? 0 : 200;
+            xhr.open('GET', name, false);
+            xhr.overrideMimeType("text/html;charset=utf-8");//默认为utf-8
+            xhr.send(null);
+            return xhr.status === okStatus ? xhr.responseText : null;
+        }
+        function Clear() {
+            var id = document.getElementById("NumTxt");
+            id.value = "";
+        }
+        var text = load("test.txt");//搜索文件
+        var ProblemId = new Array();//处理所有文件id
+        function MakeSearchData() {
+            text = text.toUpperCase();
+            ProblemId = text.split("\n");
+        }
+        function AddFormNode(td1v, td2v, td3v, td4v) {
+            //alert(td1v);
+            try {
+                var fa = document.getElementById("ProblemList");
+                var nw = document.createElement('tr');
+                var td1 = document.createElement('td');
+                td1.innerHTML = td1v;
+                nw.append(td1);//编号
+
+                var td2 = document.createElement('td');
+                td2.innerHTML = td2v;
+                nw.appendChild(td2);//题号
+
+                var td3 = document.createElement('td');
+                td3.innerHTML = td3v;
+                nw.appendChild(td3);//题目名称
+
+                var td4 = document.createElement('td');
+                td4.innerHTML = td4v;
+                nw.appendChild(td4);
+                fa.appendChild(nw);
+            }
+            catch (err) {
+                alert(err);
+            }
+
+        }
+        function GoToSearch() {
+            var id = document.getElementById("NumTxt").value;//输入的字符
+            id = id.toUpperCase();
+
+            var fa = document.getElementById("ProblemList"), cnt = 0;//添加的位置
+            var el = document.getElementById('ProblemList');
+            var childs = el.childNodes;
+            for (var i = childs.length - 1; i >= 5; i--) el.removeChild(childs[i]);
+
+
+            for (var i = 0; i < ProblemId.length; i++) {
+                if (ProblemId[i].indexOf(id) > -1) {
+                    AddFormNode(++cnt, ProblemId[i].substring(0, 4), ProblemId[i].substring(4, ProblemId[i].length),
+                        "<a href=\"" + "http://wwwwodddd.com/lydsy/" + ProblemId[i].substring(0, 4) + ".zip" + "\">点击下载</a>");
+                }
+            }
+            if (cnt == 0) {
+                AddFormNode(++cnt, "1000", "attack204太菜了找不到对应的题目qwq", "<a href=\"" + "https://darkbzoj.cf/" + "\" target=\"_blank\">点击下载</a>");
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.2/css/mdui.min.css">
+    <script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.2/js/mdui.min.js"></script>
+</head>
+
+
+<style>
+    body {
+        background-image: url("./backgroud-img.jpg");
+    }
+
+    .MainFrom {
+        width: 80%;
+        display: block;
+        margin: auto;
+    }
+</style>
+
+<body class="mdui-theme-primary-purple mdui-theme-accent-purple mdui-container">
+    <script>
+        MakeSearchData();
+    </script>
+
+    <div class="mdui-container">
+        <div class="mdui-img-fluid" align="center" style="padding: 123px 0px 0px 0px">
+            <img class="mdui-ripple" width=400 src="./logo.png">
+        </div>
+    </div>
+
+    <div class="MainFrom">
+        <div class="mdui-container MainFrom">
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <i class="mdui-icon material-icons">&#xe8b6;</i>
+                <label class="mdui-textfield-label">请输入题号/题目关键字</label>
+                <input class="mdui-textfield-input " type="email" id="NumTxt" onclick="Clear()"
+                    onkeypress="if(event.keyCode==13) GoToSearch()" />
+            </div>
+        </div>
+
+        <div align="center" class="MainFrom mdui-container mdui-theme-primary">
+            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" onclick="GoToSearch()"
+                onkeypress="if(event.keyCode==13) GoToSearch()">
+                <i class="mdui-icon material-icons">&#xe1b7;</i>
+                点击搜索
+            </button>
+        </div>
+        <br>
+        <div align="center" class="mdui-container mdui-theme-primary">
+            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-pink-accent" onclick = "window.open('../id', '_self');">
+                <i class="mdui-icon material-icons">format_list_numbered</i>
+                按编号
+            </button>
+            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-light-blue" onclick = "window.open('../name', '_self');">
+                <i class="mdui-icon material-icons">perm_identity</i>
+                按名称
+            </button>
+        </div>
+        <br>
+        <div class="mdui-container">
+            <div class="mdui-table-fluid MainFrom">
+                <table class="mdui-table mdui-table-hoverable" id="ProblemList">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>题号</th>
+                            <th>题目名称</th>
+                            <th>下载地址</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>   
+    
+    <div>
+        <div class="mdui-bottom-nav mdui-bottom-nav-fixed">
+            <a style="width: 100%" href="javascript:;" class="mdui-ripple mdui-bottom-nav-active">
+                <label>Copyright©2019-2019 attack204</label>
+                <br>
+                <label>当前版本号: v1.0</label>
+            </a>
+        </div>
+        <div align="center" class="mdui-container  mdui-theme-accent-pink">
+            <button class="mdui-btn mdui-color-theme-accent mdui-ripple"
+                mdui-dialog="{target: '#example-3'}">点击查看更新历史</button>
+
+            <div class="mdui-dialog" id="example-3">
+                <div class="mdui-dialog-title">更新历史</div>
+                <div class="mdui-dialog-content">
+                    <div class="mdui-table-fluid">
+                        <table class="mdui-table">
+                            <thead>
+                                <tr>
+                                    <th>时间</th>
+                                    <th>更新内容</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2019.2.15</td>
+                                    <td>attack204写下了这个垃圾网站 </td>
+                                </tr>
+                                <tr>
+                                    <td>2019.2.16</td>
+                                    <td>更新了配色，优化了下载按钮 </td>
+                                </tr>
+                                <tr>
+                                    <td>2019.2.18</td>
+                                    <td>优化了交互模式，移动端基本能看了</td>
+                                </tr>
+                                <tr>
+                                    <td>2019.2.18 23:26</td>
+                                    <td>attack204在dsr学弟的帮助下，经过一下午+一晚上的努力终于写出了按题目名称搜索界面</td>
+                                </tr>
+                                <tr>
+                                    <td>咕咕咕</td>
+                                    <td>咕咕咕</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="mdui-table-fluid">
+                        <table class="mdui-table" style="text-align:center">
+                            <thead>
+                                <tr>
+                                    <th>To Do list</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>apk化</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="mdui-dialog-actions">
+                    <button class="mdui-btn mdui-ripple" mdui-dialog-close>确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+
+
+</html>

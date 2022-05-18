@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Attack数学工具</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="./math.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#RamClear").click(function() {
+                $("#RamInt").val(0);
+                $("#RamLonglong").val(0);
+                $("#RamDouble").val(0);
+                $("#RamChar").val(0);
+            });
+            $("#RamClick").click(function () {
+                var _int = $("#RamInt").val();
+                var _longlong = $("#RamLonglong").val();
+                var _double = $("#RamDouble").val();
+                var _char = $("#RamChar").val();
+                var ans = (_int * 4 + _longlong * 8 + _double * 8 + _char) / 1024 / 1024;
+                $("#RamRes").val(ans + "(M)");
+            });
+        });
+
+    </script>
+    <style>
+        .MainCenter {
+            margin: auto;
+            width: 60%;
+            border: 3px solid rgb(11, 197, 221);
+            padding: 30px;
+        }
+
+        .MainNav {
+            margin: auto;
+            width: 60%;
+            padding: 10px 10px 10px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-primary text-white jumbotron text-center" style="margin-bottom:0">
+        <h1>数学在线小工具</h1>
+        <strong>by attack204</strong>
+    </div>
+    <div class="MainNav">
+        <ul class="nav nav-pills" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="pill" href="#CNM">C(N, M)</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#ANM">A(N, M)</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#Inv">逆元</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#Number">整数分析</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#RamCalc">内存计算</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div id="CNM" class="tcontainer tab-pane active MainCenter">
+            <div class="input-groud">
+                <div class="alert alert-info">计算C(N, M)。也就是从N个元素中选M个的方案数(无标号)</div>
+                <input id="Cup" type="text" class="form-control" placeholder="N">
+                <br>
+                <input id="Cdown" type="text" class="form-control" placeholder="M" onkeypress="if(event.keyCode==13) CalcC()">
+                <br>
+                <input style="align:center;" type="button" class="btn btn-primary" value="点击计算" onclick="CalcC()">
+                <input style="align:center;" type="button" class="btn btn-primary" value="清空" onclick="ClearC()">
+                <input style="margin: 20px 0px 0px 0px" id="Cres" type="text" class="form-control" placeholder="result">
+            </div>
+        </div>
+        <div id="ANM" class="container tab-pane fade MainCenter">
+            <div class="input-groud">
+                <div class="alert alert-success">计算A(N, M)。也就是从N个元素中选M个的方案数(有标号)</div>
+                <input id="Aup" type="text" class="form-control" placeholder="N">
+                <br>
+                <input  id="Adown" type="text" class="form-control" placeholder="M" onkeypress="if(event.keyCode==13) CalcA()" >
+                <br>
+                <input style="align:center;" type="button" class="btn btn-primary" value="点击计算" onclick="CalcA()">
+                <input style="align:center;" type="button" class="btn btn-primary" value="清空" onclick="ClearA()">
+                <input style="margin: 20px 0px 0px 0px" id="Ares" type="text" class="form-control" placeholder="result">
+            </div>
+        </div>
+        <div id="Inv" class="container tab-pane fade MainCenter">
+            <div class="input-groud">
+                <div class="alert alert-primary">计算A在模P意义下的逆元</div>
+                <p>例如A = 2, P = 1000000007, result = 500000004</p>
+                <input id="InvUp" type="text" class="form-control" placeholder="A">
+                <br>
+                <input id="InvDown" type="text" class="form-control" placeholder="P" onkeypress="if(event.keyCode==13) CalcInv()">
+                <br>
+                <input style="align:center;" type="button" class="btn btn-primary" value="点击计算" onclick="CalcInv()">
+                <input style="align:center;" type="button" class="btn btn-primary" value="清空" onclick="ClearInv()">
+                <input style="margin: 20px 0px 0px 0px" id="InvRes" type="text" class="form-control"
+                    placeholder="result">
+            </div>
+        </div>
+        <div id="Number" class="container tab-pane fade  MainCenter">
+            <div class="input-groud">
+                <input id="NumberInput" type="text" class="form-control" placeholder="请输入需要分析的整数" onkeypress="if(event.keyCode==13) NumberAnalysis()">
+                <br>
+                <input style="align:center;" type="button" class="btn btn-primary" value="点击分析"
+                    onclick="NumberAnalysis()" >
+                <div>
+                    <p id="NumberApproxNum">约数有：</p>
+                    <input id="NumberApprox" type="text" class="form-control">
+                </div>
+                <div>
+                    <p id="NumberPrimeNum">质因数有：</p>
+                    <input id="NumberPrime" type="text" class="form-control">
+                </div>
+                <br>
+                <div>
+                    <p id="NumberMu">莫比乌斯函数为</p>
+                </div>
+                <div>
+                    <p id="NumberPhi">欧拉函数为</p>
+                </div>
+            </div>
+        </div>
+        <div id="RamCalc" class="container tab-pane fade MainCenter">
+            <div id="RamInput" class="input-groud" >
+                <div class="alert alert-danger">应lxt同学添加，目前只适用于C++语言。支持科学计数法(如1e7)，暂不支持表达式</div>
+                <form>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">int</span>
+                        </div>
+                        <input id = "RamInt" type="text" class="form-control" >
+                    </div>
+                </form>
+                <form>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">long long </span>
+                        </div>
+                        <input id = "RamLonglong" type="text" class="form-control">
+                    </div>
+                </form>
+                <form>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend" style="margin:auto;">
+                            <span class="input-group-text">double</span>
+                        </div>
+                        <input id = "RamDouble" type="text" class="form-control">
+                    </div>
+                </form>
+                <form>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">char</span>
+                        </div>
+                        <input id = "RamChar" type="text" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <input id="RamClick" style="align:center;" type="button" class="btn btn-primary" value="点击计算">
+            <input id="RamClear" style="align:center;" type="button" class="btn btn-primary" value="清空">
+            <input style="margin: 20px 0px 0px 0px" id="RamRes" type="text" class="form-control" placeholder="result">
+        </div>
+    </div>
+
+    <input style="position:fixed; bottom:0;" type="button" data-target="#loginModal" data-toggle="modal" name="name"
+        class="width:50%; form-control  bt-red" value="点击查看更新历史" />
+    <!-- modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header blue">
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>时间</th>
+                                <th>内容</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2019.2.28</td>
+                                <td>项目启动，添加求组合/排列/逆元工具</td>
+                            </tr>
+                            <tr>
+                                <td>2019.2.29</td>
+                                <td>添加整数性质分析</td>
+                            </tr>
+                            <tr>
+                                <td>咕咕咕</td>
+                                <td>咕咕咕</td>
+                            </tr>
+                            <tr>
+                                <td>ToDoList</td>
+                                <td>多项式相关</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

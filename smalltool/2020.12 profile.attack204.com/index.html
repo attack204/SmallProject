@@ -1,0 +1,56 @@
+<!DOCTYPE html5>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/btn.css">
+  <link rel="stylesheet" href="./css/mask.css">
+  <!-- <link rel="stylesheet" href="/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <div class="OtherContainer">
+  
+    <div class="MainInformation">
+      
+      <div class="myBriefInformation">
+        <div>🌟常用ID:attack204(自为风月马前卒)</div>
+        <div>🏫就读于:哈尔滨工业大学(威海)</div>
+        <div>⚙️专业:软件工程</div>
+        <div>🕛年级:大一</div>
+      </div>
+      <div class="myPic">
+        <img src="./img/head.png">
+      </div>
+    </div>
+
+    <div id="DetailInformation">
+
+    </div>
+    <script>
+      function load(name) {
+          let xhr = new XMLHttpRequest(),
+              okStatus = document.location.protocol === "file:" ? 0 : 200;
+          xhr.open('GET', name, false);
+          xhr.overrideMimeType("text/html;charset=utf-8");//默认为utf-8
+          xhr.send(null);
+          return xhr.status === okStatus ? xhr.responseText : null;
+      }
+  
+      $(document).ready(function () {
+          var txt = load("./profile.md");
+          $("#DetailInformation").html(marked(txt));
+      });
+  </script>
+  </div>
+</body>
+
+
+</html>
+<script src="js/mask.js"></script>
+<script src="./js/boom.js"></script>

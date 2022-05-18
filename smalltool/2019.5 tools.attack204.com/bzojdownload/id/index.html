@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+
+    <head>
+        <meta name="generator" content="Hexo 3.8.0">
+        <meta charset="utf-8">
+        <meta name="keywords" content="BZOJ数据下载">
+        <meta name="description" content="BZOJ数据下载">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+        <title>BZOJ数据下载</title>
+    </head>
+    <script type="text/javascript">
+        function GoTODowland() {
+            var id = document.getElementById("NumTxt").value;
+            var num = Number(id);
+            //alert(num);
+            if (id == "") {
+                document.getElementById("ErrorButtonEmpty").click();
+            }
+            else if (num < 1000 || num > 5000) {
+                document.getElementById("ErrorButtonCanFind").click();
+            } else {
+                var weblink = "https://lydsy.download/archive/";
+                window.open(weblink + id + ".zip");
+            }
+
+        }
+    </script>
+    <link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.2/css/mdui.min.css">
+    <script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.2/js/mdui.min.js"></script>
+</head>
+
+
+<style>
+    body {
+        background-image: url("./backgroud-img.jpg");
+    }
+
+    #MainFrame {
+        width: 100%;
+        height: 100%;
+    }
+
+    #Test {
+        width: 50%;
+
+    }
+</style>
+
+<body class="mdui-theme-primary-purple mdui-theme-accent-purple">
+
+    <div class="mdui-container">
+        <div class="mdui-img-fluid" align="center" style="padding: 123px 0px 0px 0px">
+            <img class="mdui-ripple" width=400 src="./logo.png">
+        </div>
+    </div>
+
+    <div id="MainFrame">
+        <div id="Test" class="mdui-container">
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <i class="mdui-icon material-icons">arrow_forward</i>
+                <label class="mdui-textfield-label">请输入题号</label>
+                <input class="mdui-textfield-input " type="email" id="NumTxt"
+                    onkeypress="if(event.keyCode==13) GoTODowland()" />
+            </div>
+        </div>
+
+        <div align="center" class="mdui-container mdui-theme-primary">
+            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" onclick="GoTODowland()"
+                onkeypress="if(event.keyCode==13) GoTODowland()">
+                <i class="mdui-icon mdui-icon-right material-icons">arrow_downward</i>
+                点击下载
+            </button>
+        </div>
+        <br>
+        <div align="center" class="mdui-container mdui-theme-primary">
+            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-pink-accent" onclick = "window.open('../id', '_self');">
+                <i class="mdui-icon material-icons">format_list_numbered</i>
+                按编号
+            </button>
+            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-light-blue" onclick = "window.open('../name', '_self');">
+                <i class="mdui-icon material-icons">perm_identity</i>
+                按名称
+            </button>
+        </div>
+    </div>
+
+
+    <div class="mdui-container">
+        <button style="display: none" id="ErrorButtonEmpty" class="mdui-btn mdui-color-theme-accent mdui-ripple"
+            mdui-dialog="{target: '#example-1'}">test</button>
+
+        <div class="mdui-dialog" id="example-1">
+            <div class="mdui-dialog-title">好像什么都没输入呢</div>
+            <div class="mdui-dialog-content">试试输入1001?</div>
+            <div class="mdui-dialog-actions">
+                <button class="mdui-btn mdui-ripple" mdui-dialog-close>确认</button>
+            </div>
+        </div>
+    </div>
+    <div class="mdui-container">
+        <button style="display: none" id="ErrorButtonCanFind" class="mdui-btn mdui-color-theme-accent mdui-ripple"
+            mdui-dialog="{target: '#example-2'}">test</button>
+
+        <div class="mdui-dialog" id="example-2">
+            <div class="mdui-dialog-title">好像没有对应的题目呢</div>
+            <div class="mdui-dialog-content">换个题号试试吧，目前仅支持下载5000之前的题目~</div>
+            <div class="mdui-dialog-actions">
+                <button class="mdui-btn mdui-ripple" mdui-dialog-close>确认</button>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div>
+        <div class="mdui-bottom-nav mdui-bottom-nav-fixed">
+            <a style="width: 100%" href="javascript:;" class="mdui-ripple mdui-bottom-nav-active">
+                <label>Copyright©2019-2019 attack204</label>
+                <br>
+                <label>当前版本号: v1.0</label>
+            </a>
+        </div>
+
+
+        <div align="center" class="mdui-container  mdui-theme-accent-pink">
+            <button class="mdui-btn mdui-color-theme-accent mdui-ripple"
+                mdui-dialog="{target: '#example-3'}">点击查看更新历史</button>
+
+            <div class="mdui-dialog" id="example-3">
+                <div class="mdui-dialog-title">更新历史</div>
+                <div class="mdui-dialog-content">
+                    <div class="mdui-table-fluid">
+                        <table class="mdui-table">
+                            <thead>
+                                <tr>
+                                    <th>时间</th>
+                                    <th>更新内容</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2019.2.15</td>
+                                    <td>attack204写下了这个垃圾网站 </td>
+                                </tr>
+                                <tr>
+                                    <td>2019.2.16</td>
+                                    <td>更新了配色，优化了下载按钮 </td>
+                                </tr>
+                                <tr>
+                                    <td>2019.2.18</td>
+                                    <td>优化了交互模式，移动端基本能看了</td>
+                                </tr>
+                                <tr>
+                                    <td>2019.2.18 23:26</td>
+                                    <td>attack204在dsr学弟的帮助下，经过一下午+一晚上的努力终于写出了按题目名称搜索界面</td>
+                                </tr>
+                                <tr>
+                                    <td>咕咕咕</td>
+                                    <td>咕咕咕</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="mdui-table-fluid">
+                        <table class="mdui-table" style="text-align:center">
+                            <thead>
+                                <tr>
+                                    <th>To Do list</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>apk化</td>
+                                </tr>
+                                <tr>
+                                    <td>题目搜索(这个好像很麻烦qwq)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="mdui-dialog-actions">
+                    <button class="mdui-btn mdui-ripple" mdui-dialog-close>确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mdui-fab-wrapper" mdui-fab="{trigger: 'hover'}">
+        <button class="mdui-fab mdui-ripple mdui-color-theme-accent">
+            <!-- 默认显示的图标 -->
+            <i class="mdui-icon material-icons">add</i>
+
+            <!-- 在拨号菜单开始打开时，平滑切换到该图标，若不需要切换图标，则可以省略该元素 -->
+            <i class="mdui-icon mdui-fab-opened material-icons">add</i>
+        </button>
+        <div class="mdui-fab-dial">
+            <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink"><i
+                    class="mdui-icon material-icons">backup</i></button>
+            <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-red"><i
+                    class="mdui-icon material-icons">bookmark</i></button>
+            <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-orange"><i
+                    class="mdui-icon material-icons">access_alarms</i></button>
+            <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue"><i
+                    class="mdui-icon material-icons">touch_app</i></button>
+        </div>
+    </div>
+
+</body>
+
+
+
+</html>

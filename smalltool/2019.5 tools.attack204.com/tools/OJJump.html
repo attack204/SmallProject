@@ -1,0 +1,166 @@
+<!DOCTYPE HTML> 
+<html lang="zh-CN">
+<head>
+    <head><meta name="generator" content="Hexo 3.8.0">
+        <meta charset="utf-8">
+        <meta name="keywords" content="Attack工具导航">
+        <meta name="description" content="Attack工具导航">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="renderer" content="webkit|ie-stand|ie-comp">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <title>Attack工具导航</title>
+    </head>
+    <script type = "text/javascript">
+        function NormalJump() {
+            var opt = document.getElementById("select").value;
+            var id = document.getElementById("txt2").value;
+            var luogulink = "https://www.luogu.org/problemnew/show/P",
+                bzojlink  = "https://www.lydsy.com/JudgeOnline/problem.php?id=",
+                cflink    = "https://codeforces.com/contest/",
+                hdulink   = "http://acm.hdu.edu.cn/showproblem.php?pid=";
+            if(opt == 'luogu') {
+                window.open(luogulink + id);
+            } else if(opt == 'bzoj') {
+                window.open(bzojlink + id);
+            } else if(opt == 'cf') {
+                var pre = id.substr(0, id.length - 1), suf = id[id.length - 1];
+                window.open(cflink + pre + "/problem/" + suf);
+            } else if(opt == 'hdu') {
+                window.open(hdulink + id);
+            }
+        }
+        function erase() {
+            var a = document.getElementById("txt2");
+            a.value = "";
+        }
+        function txtchange() {
+            erase();
+            var myselet = document.getElementById("select");
+            var name = myselet.options[myselet.selectedIndex].value;
+            var txtid = document.getElementById("txt2");
+            if(name == 'cf')         txtid.placeholder = "示例:123d";
+            else if(name == 'luogu') txtid.placeholder = "示例:1000";
+            else if(name == 'bzoj')  txtid.placeholder = "示例:1001";
+            else if(name == 'hdu')   txtid.placeholder = "示例:1000";
+        } 
+    </script>
+    <script type = "text/javascript">
+        function AutoJump() {
+            var txt = document.getElementById("AutoTxt").value;
+            //alert(txt); 
+            var PlacePos = txt.indexOf(' ', 0), opt, id;
+            if(PlacePos == -1) {
+                for(var i = 0; i < txt.length; i++) 
+                    if(txt[i] >= '0' && txt[i] <= '9') {
+                        PlacePos = i;
+                        opt = txt.substring(0, PlacePos),
+                        id =  txt.substring(PlacePos, txt.length);
+                        break;
+                    }
+            } else {
+                opt = txt.substring(0, PlacePos),
+                id =  txt.substring(PlacePos + 1, txt.length);
+            }
+            if(PlacePos == -1) {
+                alert("输入不合法");
+            }
+            var luogulink = "https://www.luogu.org/problemnew/show/P",
+                bzojlink  = "https://www.lydsy.com/JudgeOnline/problem.php?id=",
+                cflink    = "https://codeforces.com/contest/",
+                hdulink   = "http://acm.hdu.edu.cn/showproblem.php?pid=";
+            if(opt == 'luogu') {
+                window.open(luogulink + id);
+            } else if(opt == 'bzoj') {
+                window.open(bzojlink + id);
+            } else if(opt == 'cf') {
+                var pre = id.substr(0, id.length - 1), suf = id[id.length - 1];
+                window.open(cflink + pre + "/problem/" + suf);
+            } else if(opt == 'hdu') {
+                window.open(hdulink + id);
+            }         
+        }
+    </script>
+</head>
+
+
+<style>
+    body {
+         background-image : url('https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPictur'); 
+    }
+    #PromptText {
+        text-align: center;
+        border: 1px solid #36b3ef;
+        color:#36b3ef;
+    }
+    .Jump {
+        background-color:azure;
+        color:#36b3ef;
+    }
+    .AutoPrompt {
+        font-size : 36px;
+        color : #36b3ef;
+    }
+    #AutoTxt {
+        appearance:none;
+        width:350px;
+        height: 30px;
+        outline:0;
+    }
+    #NewWindow {
+        margin:20px;
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
+        line-height: 25px;
+        border: 0;
+        width:70px;
+        height: 25px;
+        font-size: 14px;
+        color: white;
+        background-color: rgb(33,134,250); 
+    }
+</style>
+
+<body>
+        <div align = "center" style = "padding: 234px 0px 0px 0px">
+            <img src = "http://wx1.sinaimg.cn/small/005S5cb6ly1fz9gtq7n2lj30ey050t91.jpg">
+        </div>
+    
+    <!--  
+        <div align = "center" padding = "12px"> 
+            <select id='select' onchange = "txtchange()">
+                <option value = 'cf'>  cf</option>
+                <option value = 'luogu'>洛谷</option>
+                <option value = 'bzoj'>bzoj</option>
+                <option value = 'hdu'> hdu</option>
+            </select>
+            <input class = "Cent" type= "text" id = "txt2" placeholder = "示例:123d" onkeypress= "if(event.keyCode==13) NormalJump()" />
+            <br>
+            <input class = "Centid = "Jummp" type= 'button'  class = "Jump" value = '跳转' onclick = "NormalJump()" />
+            </br>
+        </div>
+    -->
+        <br>
+
+        <div align = "center" class = "Main">
+         
+            <!-- <h1 class = "AutoPrompt">智能(zhang)引擎</h1> -->
+            <input type = "text" id = "AutoTxt" placeholder = "示例:cf 123d" onkeypress= "if(event.keyCode==13) AutoJump()" />
+            <br>
+            <input type= 'button' id = "NewWindow" value = '跳转' onclick = "AutoJump()" />
+            <br>
+            notice!
+            </br>
+            目前已支持的OJ有：codeforces, 洛谷, BZOJ, HDU
+            <br>
+        </div>
+  
+
+
+</body>
+
+</html>
