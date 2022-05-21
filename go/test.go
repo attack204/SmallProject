@@ -2,14 +2,36 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
-var sum int32 = 0
+type test struct {
+	x int
+}
 
-func add() {
-	sum += 1
+var ch = make(chan *test, 5)
+
+func rev() {
+	for i := 1; i < 10; i++ {
+		fmt.Println("recv", i, "begin")
+		x := <-ch
+		fmt.Println(x)
+		fmt.Println("recv", i, "end")
+	}
+}
+
+func send() {
+	for i := 1; i < 10; i++ {
+		t := &test{x: i}
+		fmt.Println("send ", i, "begin")
+		ch <- t
+		fmt.Println("send ", i, "end")
+	}
 }
 
 func main() {
-	fmt.Println(sum)
+	go send()
+	go rev()
+
+	time.Sleep(10000000)
 }
