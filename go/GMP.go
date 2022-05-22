@@ -55,6 +55,7 @@ func newproc1(fn *funcval, argp unsafe.Pointer, narg int32, callergp *g, callerp
 type P struct {
 
 	status uint32 //五种状态字段
+	mcache *mcache //内存分配组件
 
 	m muintpr//point to M
 
