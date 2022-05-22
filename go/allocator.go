@@ -62,6 +62,37 @@ type heapArena struct {
 	....
 }
 
+func mallocgc(size uintptr, typ *_type, needzero bool) unsafe.Pointer {
+	...
+	if size <= maxSmallSize {
+		if noscan && size < maxTinySize {
+			off := c.tinyoffset
+			if off + size <= maxTinySize && c.tiny != 0 {
+				x = unsafe.Pointer(c.inty + off)
+				c.tinyoffset = off + size
+				c.local_tinyallocs++
+				releasem(mp)
+				return x
+			}
+
+			span := c.alloc[tinySpanClass]
+			v  := nextFreeFast(span)
+			if v == 0 {
+				v, _, _ = c.nextFree(tinySpanClass)
+			}
+			x = unsafe.Pointer(v)
+			(*[2]uint64)(x)[0] = 0
+			(*[2]uint64)(x)[1] = 0
+			if size < c.tinyoffset || c.tiny == 0 {
+				c.tiny = uintptr(x)
+				c.tinyoffset = size
+			}
+			size = maxTinySisze
+
+		}
+	}
+}
+
 func main() {
 
 }
