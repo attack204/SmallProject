@@ -1,6 +1,9 @@
 package main
 
-import "runtime"
+import (
+	"runtime"
+	"sync/atomic"
+)
 
 type workType struct {
 	full  lfstack
@@ -72,6 +75,35 @@ func gcStart(trigger gcTrigger) {
 	})
 	work.cycles++
 	gcController.startCycle() //4. gc start
+}
+
+func gcStart(trigger gcTrigger) {
+	...
+	setGCPhase(_GCmark)
+
+	gcBgMarkPrepare()
+	gcMarkRootPrepare()
+
+	atomic.Store(&gcBlackenEnabled, 1)
+	systemstack(func() {
+		now = startTheWorldWithSema(trace.enabled)
+		work.pauseNS += now - work.pauseStart
+		work.tMark = now
+	})
+	semrelease(&work.startSema)
+}
+
+func stopTheWorldWithSema() {
+	...
+	sched.stopwait = gomaxprocs
+	for _, p := range allp {
+		s := p.status
+		if s == _Psyscall && atomic.Cas(&p.status, s, _Pgcstop) { //set the p's status
+			p.syscalltick++
+			sched.stopwait-- //record the number of P that stoped
+		}
+	}
+	...
 }
 
 func main() {
