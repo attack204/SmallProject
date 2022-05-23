@@ -3,6 +3,7 @@ package main
 import (
 	"runtime"
 	"sync/atomic"
+	"unsafe"
 )
 
 type workType struct {
@@ -104,6 +105,87 @@ func stopTheWorldWithSema() {
 		}
 	}
 	...
+}
+
+func gcBgMarkStartWorkers() {
+	for gcBgMarkWorkerCount < gomaxprocs {
+		go gcBgMarkWorker() //start ncpu MarkWorker 启动ncpu个MarkWorker
+
+		notetsleep(&work.bgMarkReady, -1)
+		noteclear(&work.bgMarkReady) //gopark after starting, waiting to be called
+
+		gcBgMarkWorkerCount++
+	}
+}
+
+
+func (c *gcControllerState) findRunnableGCWorker(_p_ *p) *g {
+	...
+	//set p's statue 设置p的状态
+	if decIfPositive(&c.dedicatedMarkWorkersNeeded) {
+		_p_.gcMarkWorkerMode = gcMarkWorkerDedicateMode
+	} else {
+		delta := nanotime() - gcController.markStarTime
+		if delta > 0 && float64(_p_.gcFractionalMarkTime) / float64(delta) > c.fractionalUtilizationGoal {
+			return nil
+		}
+		_p_.gcMarkWorkerMode = gcMarkWorkerFractionalMode
+	}
+	gp := _p_.gcBgMarkWorker.ptr()
+	casgstatus(gp, _Gwaiting, _Grunnable) // modify goroutine's status 修改gourinte的状态
+	return gp
+}
+
+
+func gcBgMarkWorker() {
+	...
+	switch pp.gcMarkWorkerMode {
+	case gcMarkWorkerDedicateMode:
+		...
+		gcDrain(&_p_.gcw, gcDrainFlushBgCredit)
+	case gcMarkWorkerFractionalMode:
+		gcDrain(&_p_.gcw, gcDrainFractional | gcDrainUntilPreempt | gcDrainFlushBgCredit)
+	case gcMarkWorkerIdleMode:
+		gcDrain(&_p_.gcw, gcDrainIdle | gcDrainUntilPreempt | gcDrainFlushBgCredit)
+	}
+	...
+}
+
+type gcWork struct {
+	wbuf1, wbuf2 *workbuf
+	...
+}
+
+type workbufhdr struct {
+	node lfnode
+	nobj int
+}
+type workbuf struct {
+	workbufhdr
+	obj [(_WorkbufSize - unsafe.Sizeof(workbufhdr{})) / sys.PtrSize] uintptr
+}
+
+func gcDrain(gcw *gcWork, flags gcDrainFlags) {
+	...
+	if work.markrootNext < work.markrootJobs {
+		for !(preemptible && gp.preempt) {
+			job := atomic.Xadd(&work.markrootNext, +1) - 1
+			if job >= work.markrootJobs {
+				break
+			}
+			markroot(gcw, job) //here !
+			if check != nil && check() {
+				goto done
+			}
+		}
+	}
+
+	...
+	scanobject(b, gcw)
+	greyobject()
+	...
+
+
 }
 
 func main() {
