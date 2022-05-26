@@ -6,6 +6,8 @@ using std::endl;
 class Point2d {
 public:
     float x, y;
+    //virtual function
+    virtual func() {}
 };
 class Point3d : public Point2d{
 public:
@@ -13,7 +15,8 @@ public:
 };
 class Vertex {
 public:
-    float num;
+    Vertex *next;
+    virtual func() {}
 };
 class Vertex3D: public Point2d, public Vertex {
 public:
