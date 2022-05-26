@@ -3,30 +3,25 @@
 using std::cout;
 using std::endl;
 
-class A {
+class Point2d {
 public:
-    long a;
-    A() {
-        a = 1;
-    }
+    float x, y;
 };
-class B: public A{
+class Point3d : public Point2d{
 public:
-    long b;
-    B() {
-        b = 2;
-    }
+    float z;
 };
-class C: public B {
+class Vertex {
 public:
-    long c;
-    C() {
-        c = 3;
-    };
+    float num;
 };
+class Vertex3D: public Point2d, public Vertex {
+public:
+    float mumble;
+};
+
 
 
 int main() {
-    B *test = new A();
-    cout << test->c << '\n';
+
 }
