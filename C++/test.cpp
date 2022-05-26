@@ -1,23 +1,32 @@
 #include<iostream>
-using namespace std;
 
-class X {
+using std::cout;
+using std::endl;
 
+class A {
+public:
+    long a;
+    A() {
+        a = 1;
+    }
 };
-class A: virtual X {
-
+class B: public A{
+public:
+    long b;
+    B() {
+        b = 2;
+    }
 };
-class B: virtual X {
-
+class C: public B {
+public:
+    long c;
+    C() {
+        c = 3;
+    };
 };
-class D: A, B {
 
-};
 
 int main() {
-    cout << sizeof(X) << '\n';
-    cout << sizeof(A) << '\n';
-    cout << sizeof(B) << '\n';
-    cout << sizeof(D) << '\n';
+    B *test = new A();
+    cout << test->c << '\n';
 }
-
