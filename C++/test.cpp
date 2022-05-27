@@ -1,30 +1,24 @@
 #include<iostream>
+using namespace std;
 
-using std::cout;
-using std::endl;
+class X {
 
-class Point2d {
-public:
-    float x, y;
-    //virtual function
-    virtual func() {}
 };
-class Point3d : public Point2d{
+class A: virtual X {
 public:
-    float z;
+    int sum() {
+        return 1;
+    }
 };
-class Vertex {
-public:
-    Vertex *next;
-    virtual func() {}
-};
-class Vertex3D: public Point2d, public Vertex {
-public:
-    float mumble;
-};
+class B: virtual X {
 
+};
+class D: A, B {
 
+};
 
 int main() {
-
+    A a;
+    cout << a.sum() << '\n';
 }
+

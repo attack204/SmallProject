@@ -5,7 +5,10 @@ class X {
 
 };
 class A: virtual X {
-
+public:
+    int sum() {
+        return 1;
+    }
 };
 class B: virtual X {
 
@@ -15,9 +18,7 @@ class D: A, B {
 };
 
 int main() {
-    cout << sizeof(X) << '\n';
-    cout << sizeof A << '\n';
-    cout << sizeof B << '\n';
-    cout << sizeof D << '\n';
+    A a;
+    cout << a.sum() << '\n';
 }
 
