@@ -173,7 +173,7 @@ int B_PLUS_TREE_INTERNAL_PAGE_TYPE::InsertNodeAfter(const ValueType &old_value, 
   for (int i = GetSize(); i > insert_index; i--) {
     array[i] = array[i - 1];
   }
-  ariay[insert_index] = MappingType{new_key, new_value};  // insert pair
+  array[insert_index] = MappingType{new_key, new_value};  // insert pair
   IncreaseSize(1);
   return GetSize();
 }

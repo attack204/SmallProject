@@ -10,18 +10,18 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Wed Jun  8 16:04:57 2022
+# Make data base, printed on Sun Jul  3 07:49:31 2022
 
 # Variables
 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
+ 
 ?F = $(notdir $?)
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
- 
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
@@ -44,7 +44,7 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 INFOPATH = /opt/homebrew/share/info:
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/3l/9w_yn8kj05sg6t1nrk7rt6zc0000gn/T/vscode-ipc-d13d857b-5324-4eaa-96f4-81ca6bf4dbd0.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/3l/9w_yn8kj05sg6t1nrk7rt6zc0000gn/T/vscode-ipc-f8a6a509-39bc-4d99-ad90-cae770350631.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -52,13 +52,15 @@ PATH = /opt/homebrew/opt/node@14/bin:/opt/homebrew/opt/openssl@3/bin:/usr/local/
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
+LaunchInstanceID = DBA4B85B-8FC7-4713-8978-2A1D7691457E
+# environment
 VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.pDubkd2D2y/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.jxeF24P1O2/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -78,7 +80,7 @@ HOME = /Users/liugaoji
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/liugaoji/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = /Users/liugaoji/Library/Application Support/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 LOGNAME = liugaoji
 # environment
@@ -96,7 +98,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 1
+SHLVL = 2
 # environment
 JAVA_HOME = /Library/Java/JavaVirtualMachines/jdk1.8.0_331.jdk/Contents/Home/
 # default
@@ -104,7 +106,6 @@ MAKE_VERSION := 3.81
 # environment
 USER = liugaoji
 # makefile
- 
 .DEFAULT_GOAL := 
 # environment
 LESS = -R
@@ -119,7 +120,7 @@ TMPDIR = /var/folders/3l/9w_yn8kj05sg6t1nrk7rt6zc0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/liugaoji/Library/Application Support/Code/1.67.2-main.sock
+VSCODE_IPC_HOOK = /Users/liugaoji/Library/Application Support/Code/1.68.1-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -127,7 +128,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.16112542.16112548
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.20561553.20561559
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
@@ -157,9 +158,10 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 84768
+VSCODE_PID = 24057
 # variable set hash-table stats:
-# Load=71/1024=7%, Rehash=0, Collisions=1/91=1%
+ 
+# Load=72/1024=7%, Rehash=0, Collisions=1/92=1%
 
 # Pattern-specific Variable Values
 
@@ -167,9 +169,9 @@ VSCODE_PID = 84768
 
 # Directories
 
-# . (device 16777229, inode 2032488): 20 files, no impossibilities.
+# . (device 16777229, inode 2032488): 19 files, no impossibilities.
 
-# 20 files, no impossibilities in 1 directories.
+# 19 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -241,6 +243,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Wed Jun  8 16:04:57 2022
+# Finished Make data base on Sun Jul  3 07:49:31 2022
 
  

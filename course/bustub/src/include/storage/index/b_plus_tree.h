@@ -12,6 +12,7 @@
 
 #include <queue>
 #include <string>
+#include <utility>  // for std::pair
 #include <vector>
 
 #include "concurrency/transaction.h"
@@ -23,7 +24,7 @@ namespace bustub {
 
 #define BPLUSTREE_TYPE BPlusTree<KeyType, ValueType, KeyComparator>
 
-enum class Operation { FIND=0, INSERT, DELETE };
+enum class Operation { FIND = 0, INSERT, DELETE };  // 三种操作：查找、插入、删除
 
 /**
  * Main class providing the API for the Interactive B+ Tree.
@@ -57,9 +58,9 @@ class BPlusTree {
   bool GetValue(const KeyType &key, std::vector<ValueType> *result, Transaction *transaction = nullptr);
 
   // index iterator
-  INDEXITERATOR_TYPE Begin();
+  INDEXITERATOR_TYPE begin();
   INDEXITERATOR_TYPE Begin(const KeyType &key);
-  INDEXITERATOR_TYPE End();
+  INDEXITERATOR_TYPE end();
 
   void Print(BufferPoolManager *bpm) {
     ToString(reinterpret_cast<BPlusTreePage *>(bpm->FetchPage(root_page_id_)->GetData()), bpm);
@@ -79,31 +80,62 @@ class BPlusTree {
   // read data from file and remove one by one
   void RemoveFromFile(const std::string &file_name, Transaction *transaction = nullptr);
   // expose for test purpose
+  // Page *FindLeafPage(const KeyType &key, bool leftMost = false, Transaction *transaction = nullptr,
+  //                    Operation op = Operation::FIND, bool *root_is_latched_ = nullptr, bool rightMost = false);
+
   Page *FindLeafPage(const KeyType &key, bool leftMost = false);
 
-  std::pair<Page*, bool> FindLeafPageByOperation(const KeyType &key, Operation operation, Transaction *transaction = nullptr, bool leftMost = false, bool rightMost = false);
+  std::pair<Page *, bool> FindLeafPageByOperation(const KeyType &key, Operation operation = Operation::FIND,
+                                                  Transaction *transaction = nullptr, bool leftMost = false,
+                                                  bool rightMost = false);
 
-  template <typename N>
-  bool IsSafe(N *node, Operation operation);
+  // BufferPoolManager *getBPM() { return buffer_pool_manager_; }  // only for DEBUG
 
-  void UnlockUnpinPages(Transaction *transaction);
+  // uint64_t getThreadId() {  // only for DEBUG
+  //   // std::scoped_lock latch{latch_};
+
+  //   std::stringstream ss;
+  //   ss << std::this_thread::get_id();
+  //   // ss << transaction->GetThreadId();
+  //   uint64_t thread_id = std::stoull(ss.str());
+  //   return thread_id % 13;
+  //   // LOG_INFO("Thread=%lu", thread_id % 131);
+  // }
+
+  // int OpToString(Operation op) {  // only for debug
+  //   std::string res;
+  //   int d;
+  //   if (op == Operation::FIND) {
+  //     res = "FIND";
+  //     d = 0;
+  //   } else if (op == Operation::INSERT) {
+  //     res = "INSERT";
+  //     d = 1;
+  //   } else if (op == Operation::DELETE) {
+  //     res = "DELETE";
+  //     d = 2;
+  //   }
+  //   // char *c_res = res.data();
+  //   return d;
+  // }
+
  private:
   void StartNewTree(const KeyType &key, const ValueType &value);
 
   bool InsertIntoLeaf(const KeyType &key, const ValueType &value, Transaction *transaction = nullptr);
 
   void InsertIntoParent(BPlusTreePage *old_node, const KeyType &key, BPlusTreePage *new_node,
-                        Transaction *transaction = nullptr, bool *is_root_latched = nullptr);
+                        Transaction *transaction = nullptr, bool *root_is_latched = nullptr);
 
   template <typename N>
   N *Split(N *node);
 
   template <typename N>
-  bool CoalesceOrRedistribute(N *node, Transaction *transaction = nullptr);
+  bool CoalesceOrRedistribute(N *node, Transaction *transaction = nullptr, bool *root_is_latched = nullptr);
 
   template <typename N>
   bool Coalesce(N **neighbor_node, N **node, BPlusTreeInternalPage<KeyType, page_id_t, KeyComparator> **parent,
-                int index, Transaction *transaction = nullptr);
+                int index, Transaction *transaction = nullptr, bool *root_is_latched = nullptr);
 
   template <typename N>
   void Redistribute(N *neighbor_node, N *node, int index);
@@ -117,14 +149,25 @@ class BPlusTree {
 
   void ToString(BPlusTreePage *page, BufferPoolManager *bpm) const;
 
+  void UnlockPages(Transaction *transaction);
+
+  // unlock 和 unpin 事务中经过的所有parent page
+  void UnlockUnpinPages(Transaction *transaction);
+
+  // 判断node是否安全
+  template <typename N>
+  bool IsSafe(N *node, Operation op);
+
   // member variable
-  std::mutex root_latch_;
   std::string index_name_;
   page_id_t root_page_id_;
   BufferPoolManager *buffer_pool_manager_;
   KeyComparator comparator_;
   int leaf_max_size_;
   int internal_max_size_;
+  std::mutex root_latch_;  // 保护root page id不被改变
+  // bool root_is_latched_;   // static thread_local
+  // std::mutex latch_;  // DEBUG
 };
 
 }  // namespace bustub
