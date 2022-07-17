@@ -15,7 +15,7 @@ struct task_struct
     struct mm_struct *mm;    //进程内存管理信息
 
     int processor;
-    //若进程不在任何CPU上运行, cpus_runnable 的值是0，否则是1 这个�在运行队列被锁时更新
+    //若进程不在任何CPU上运行, cpus_runnable 的值是0，否则是1 这个�在运行队列被锁时更新
     unsigned long cpus_runnable, cpus_allowed;
     struct list_head run_list;   //指向运行队列的指针
     unsigned long sleep_time;   //进程的睡眠时间
@@ -131,4 +131,4 @@ struct task_struct
     spinlock_t alloc_lock;
     void *journal_info;
 };
-�
+�
