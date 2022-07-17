@@ -1,21 +1,36 @@
-#include<iostream>
-#include <memory>
-#include <unordered_map>
-class Calculator {
-public:
-    Calculator(int version_) : version(version_) {}
-    int getVersion() {
-        return version;
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <errno.h>
+
+
+int main(int argc, char const *argv[]) {
+
+    if ( argc != 2 ) {
+
+        printf("usage:%s %s\n", argv[0], "filename");
+        return -1;
     }
-private:
-    int version;
-};
-int main() {
-    auto calculator_ptr = std::make_unique<Calculator>(1);
-    std::unordered_map<std::string, std::unique_ptr<Calculator> > mp;
-    mp.emplace("index1", std::move(calculator_ptr));
-    auto res = mp.find("index1");
-    std::cout << res->first << '\n';
-    std::cout << res->second->getVersion() << '\n';
-    std::cout << mp.at("index1")->getVersion() << '\n';
+
+    int fd = -1;
+
+    fd = open( argv[1], O_RDWR );
+
+    if( -1 == fd ) {
+        printf("文件打开失败,错误号:%d\n", errno );
+        perror( "open" );
+        return -1;
+    }else {
+        printf("文件打开成功\n");
+    }
+
+    int count = lseek( fd, 0, SEEK_END );
+
+    printf("文件大小为： %d\n", count);
+
+    close( fd );
+    return 0;
 }
+
