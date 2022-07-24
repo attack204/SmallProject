@@ -1,3 +1,5 @@
+//NO-SIMD cost: 0.524068
+//SIMD cost: 0.205981
 #include <stdio.h>
 #include <emmintrin.h>
 #include <iostream>

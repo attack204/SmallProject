@@ -1,3 +1,4 @@
+//16G M1: 4s(sort) vs 14s(not sort)
 #include <algorithm>
 #include <ctime>
 #include <iostream>
