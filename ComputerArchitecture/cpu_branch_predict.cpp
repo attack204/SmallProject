@@ -11,6 +11,7 @@ int main()
     for (unsigned c = 0; c < arraySize; ++c)
         data[c] = std::rand() % 256;
 
+    // 16G M1: 4s(sort) vs 14s(not sort)
     // !!! 排序后下面的Loop运行将更快
     //std::sort(data, data + arraySize);
 
