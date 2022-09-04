@@ -1,35 +1,24 @@
 package main
 
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "github.com/go-redis/redis"
 )
 
-const SIZE uint = 4 
-const limit uint = 4e9
-func sum(l uint, r uint, c chan uint) {
-  sum := uint(0)
-  for i := l; i <= r; i++ {
-	sum += i ^ limit
-  }
-  c <- sum
-}
 func main() {
-  start := time.Now()
-  var chans [SIZE]chan uint
-  for i := range chans {
-	chans[i] = make(chan uint)
-  }
-  var ans uint
-  const base uint = uint(limit / SIZE)
-  for i := uint(0); i < SIZE; i++ {	
-	var l uint = i * base + 1
-	go sum(l, l + base, chans[i])   
-  }
-  for i := uint(0); i < SIZE; i++ {
-	ans = ans + <- chans[i]
-  }
-  fmt.Println(ans)
-  fmt.Println("execute time", time.Since(start))
-}
+    fmt.Println("golang连接redis")
 
+    client := redis.NewClient(&redis.Options{
+        Addr: "127.0.0.1:6379",
+    })
+
+    pong, err := client.Ping().Result()
+    fmt.Println(pong, err)
+
+        //添加键值对
+        err = client.Set("golang", "yes", 0).Err()
+        if err != nil {
+            fmt.Println(err)
+        }
+        fmt.Println("键golang设置成功")
+}

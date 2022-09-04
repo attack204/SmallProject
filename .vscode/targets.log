@@ -6,8 +6,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Sat Aug  6 16:37:34 2022
+
+# Make data base, printed on Sun Aug 21 19:12:12 2022
 
 # Variables
 
@@ -42,7 +45,7 @@ VSCODE_CWD = /
 # environment
 GOPROXY = https://proxy.golang.org,direct
 # environment
-PATH = /opt/homebrew/opt/python@3.9/libexec/bin:/opt/homebrew/opt/node@12/bin:/opt/homebrew/opt/node@14/bin:/opt/homebrew/opt/openssl@3/bin:/usr/local/mysql/bin:/Users/liugaoji/Desktop/Project:/Users/liugaoji/.m2/wrapper/dists/apache-maven-3.6.3-bin/1iopthnavndlasol9gbrbg6bf2/apache-maven-3.6.3//bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+PATH = /opt/homebrew/opt/python@3.9/libexec/bin:/opt/homebrew/opt/node@12/bin:/opt/homebrew/opt/node@14/bin:/opt/homebrew/opt/openssl@3/bin:/usr/local/mysql/bin:/Users/liugaoji/Desktop/Project:/Users/liugaoji/.m2/wrapper/dists/apache-maven-3.6.3-bin/1iopthnavndlasol9gbrbg6bf2/apache-maven-3.6.3//bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
@@ -52,7 +55,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.d58CmwH7lw/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.MtHqazHk8e/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -64,7 +67,7 @@ ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
 PYTHON = python3
 # environment
-MANPATH = /opt/homebrew/share/man::
+MANPATH = /opt/local/share/man:/opt/homebrew/share/man::
 # environment
 GOMODCACHE = /Users/liugaoji/go/pkg/mod
 # environment
@@ -72,7 +75,7 @@ HOME = /Users/liugaoji
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/liugaoji/Library/Application Support/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+VSCODE_CODE_CACHE_PATH = /Users/liugaoji/Library/Application Support/Code/CachedData/e4503b30fc78200f846c62cf8091b76ff5547662
 # environment
 LOGNAME = liugaoji
 # environment
@@ -112,7 +115,7 @@ TMPDIR = /var/folders/3l/9w_yn8kj05sg6t1nrk7rt6zc0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/liugaoji/Library/Application Support/Code/1.69.2-main.sock
+VSCODE_IPC_HOOK = /Users/liugaoji/Library/Application Support/Code/1.70.2-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -122,7 +125,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.26677261.26677267
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.27800799.27800805
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
@@ -154,7 +157,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 50992
+VSCODE_PID = 36818
 # environment
 python = python3
 # variable set hash-table stats:
@@ -166,7 +169,7 @@ python = python3
 
 # Directories
 
-# . (device 16777229, inode 2027547): 19 files, no impossibilities.
+# . (device 16777232, inode 2027547): 19 files, no impossibilities.
 
 # 19 files, no impossibilities in 1 directories.
 
@@ -240,8 +243,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Sat Aug  6 16:37:34 2022
+# Finished Make data base on Sun Aug 21 19:12:12 2022
 
  
-make: *** No rule to make target `all'.  Stop.
-
