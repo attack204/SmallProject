@@ -1,24 +1,23 @@
 package main
 
 import (
-    "fmt"
-    "github.com/go-redis/redis"
+	"fmt"
 )
 
-func main() {
-    fmt.Println("golang连接redis")
-
-    client := redis.NewClient(&redis.Options{
-        Addr: "127.0.0.1:6379",
-    })
-
-    pong, err := client.Ping().Result()
-    fmt.Println(pong, err)
-
-        //添加键值对
-        err = client.Set("golang", "yes", 0).Err()
-        if err != nil {
-            fmt.Println(err)
-        }
-        fmt.Println("键golang设置成功")
+func foo(a *[]int) {
+	fmt.Println(a)
+	fmt.Printf("%p\n", a)
+	(*a)[2] = 0
 }
+
+func main() {
+	a := []int{1, 2, 3, 4, 5, 6}
+	foo(&a)
+	fmt.Println(a)
+	fmt.Printf("%p\n", a)
+}
+
+//[1 2 3 4 5 6]
+//0x140000ba030
+//[1 2 0 4 5 6]
+//0x140000ba030
